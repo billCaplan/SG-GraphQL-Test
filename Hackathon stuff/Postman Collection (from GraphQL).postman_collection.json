@@ -1,0 +1,3450 @@
+{
+	"info": {
+		"_postman_id": "41222d92-8624-4163-90b1-4ca8f5ebda68",
+		"name": "Postman Collection (from GraphQL)",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "mutations",
+			"item": [
+				{
+					"name": "updateUser",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "mutation updateUser ($first: Int, $eventName: String, $first1: Int, $first2: Int, $precise: Boolean, $first3: Int, $query: String, $after: String, $cloned: Boolean, $notCloned: Boolean, $indexed: Boolean, $notIndexed: Boolean, $externalServiceID: ID, $first4: Int, $after1: String, $state: BatchChangeState, $viewerCanAdminister: Boolean, $first5: Int, $after2: String, $first6: Int, $after3: String, $user: ID!, $username: String, $displayName: String, $avatarURL: String) {\n    updateUser (user: $user, username: $username, displayName: $displayName, avatarURL: $avatarURL) {\n        id\n        username\n        displayName\n        avatarURL\n        url\n        settingsURL\n        createdAt\n        updatedAt\n        siteAdmin\n        builtinAuth\n        latestSettings {\n            id\n            createdAt\n            contents\n        }\n        settingsCascade {\n            final\n        }\n        organizations {\n            totalCount\n        }\n        organizationMemberships {\n            totalCount\n        }\n        tags\n        usageStatistics {\n            searchQueries\n            pageViews\n            codeIntelligenceActions\n            findReferencesActions\n            lastActiveTime\n            lastActiveCodeHostIntegrationTime\n        }\n        eventLogs (first: $first, eventName: $eventName) {\n            totalCount\n        }\n        emails {\n            email\n            isPrimary\n            verified\n            verificationPending\n            viewerCanManuallyVerify\n        }\n        accessTokens (first: $first1) {\n            totalCount\n        }\n        externalAccounts (first: $first2) {\n            totalCount\n        }\n        session {\n            canSignOut\n        }\n        viewerCanAdminister\n        viewerCanChangeUsername\n        surveyResponses {\n            id\n            email\n            score\n            reason\n            better\n            createdAt\n        }\n        databaseID\n        namespaceName\n        repositories (first: $first3, query: $query, after: $after, cloned: $cloned, notCloned: $notCloned, indexed: $indexed, notIndexed: $notIndexed, externalServiceID: $externalServiceID) {\n            totalCount (precise: $precise)\n        }\n        publicRepositories {\n            id\n            name\n            description\n            language\n            createdAt\n            updatedAt\n            isFork\n            isArchived\n            isPrivate\n            url\n            viewerCanAdminister\n            stars\n        }\n        batchChanges (first: $first4, after: $after1, state: $state, viewerCanAdminister: $viewerCanAdminister) {\n            totalCount\n        }\n        batchChangesCodeHosts (first: $first5, after: $after2) {\n            totalCount\n        }\n        permissionsInfo {\n            permissions\n            syncedAt\n            updatedAt\n        }\n        monitors (first: $first6, after: $after3) {\n            totalCount\n        }\n        urlForSiteAdminBilling\n    }\n}",
+								"variables": "{\n  \"first\": 0,\n  \"eventName\": \"\",\n  \"first1\": 0,\n  \"first2\": 0,\n  \"precise\": true,\n  \"first3\": 0,\n  \"query\": \"\",\n  \"after\": \"\",\n  \"cloned\": true,\n  \"notCloned\": true,\n  \"indexed\": true,\n  \"notIndexed\": true,\n  \"externalServiceID\": 0,\n  \"first4\": 0,\n  \"after1\": \"\",\n  \"state\": \"\",\n  \"viewerCanAdminister\": true,\n  \"first5\": 0,\n  \"after2\": \"\",\n  \"first6\": 0,\n  \"after3\": \"\",\n  \"user\": 0,\n  \"username\": \"\",\n  \"displayName\": \"\",\n  \"avatarURL\": \"\"\n}"
+							}
+						},
+						"url": {
+							"raw": "{{url}}",
+							"host": [
+								"{{url}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "createOrganization",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "mutation createOrganization ($first: Int, $after: String, $state: BatchChangeState, $viewerCanAdminister: Boolean, $name: String!, $displayName: String) {\n    createOrganization (name: $name, displayName: $displayName) {\n        id\n        name\n        displayName\n        createdAt\n        members {\n            totalCount\n        }\n        latestSettings {\n            id\n            createdAt\n            contents\n        }\n        settingsCascade {\n            final\n        }\n        viewerPendingInvitation {\n            id\n            createdAt\n            notifiedAt\n            respondedAt\n            responseType\n            respondURL\n            revokedAt\n        }\n        viewerCanAdminister\n        viewerIsMember\n        url\n        settingsURL\n        namespaceName\n        batchChanges (first: $first, after: $after, state: $state, viewerCanAdminister: $viewerCanAdminister) {\n            totalCount\n        }\n    }\n}",
+								"variables": "{\n  \"first\": 0,\n  \"after\": \"\",\n  \"state\": \"\",\n  \"viewerCanAdminister\": true,\n  \"name\": \"\",\n  \"displayName\": \"\"\n}"
+							}
+						},
+						"url": {
+							"raw": "{{url}}",
+							"host": [
+								"{{url}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateOrganization",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "mutation updateOrganization ($first: Int, $after: String, $state: BatchChangeState, $viewerCanAdminister: Boolean, $id: ID!, $displayName: String) {\n    updateOrganization (id: $id, displayName: $displayName) {\n        id\n        name\n        displayName\n        createdAt\n        members {\n            totalCount\n        }\n        latestSettings {\n            id\n            createdAt\n            contents\n        }\n        settingsCascade {\n            final\n        }\n        viewerPendingInvitation {\n            id\n            createdAt\n            notifiedAt\n            respondedAt\n            responseType\n            respondURL\n            revokedAt\n        }\n        viewerCanAdminister\n        viewerIsMember\n        url\n        settingsURL\n        namespaceName\n        batchChanges (first: $first, after: $after, state: $state, viewerCanAdminister: $viewerCanAdminister) {\n            totalCount\n        }\n    }\n}",
+								"variables": "{\n  \"first\": 0,\n  \"after\": \"\",\n  \"state\": \"\",\n  \"viewerCanAdminister\": true,\n  \"id\": 0,\n  \"displayName\": \"\"\n}"
+							}
+						},
+						"url": {
+							"raw": "{{url}}",
+							"host": [
+								"{{url}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteOrganization",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "mutation deleteOrganization ($organization: ID!) {\n    deleteOrganization (organization: $organization) {\n        alwaysNil\n    }\n}",
+								"variables": "{\n  \"organization\": 0\n}"
+							}
+						},
+						"url": {
+							"raw": "{{url}}",
+							"host": [
+								"{{url}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "addExternalService",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "mutation addExternalService ($input: AddExternalServiceInput!) {\n    addExternalService (input: $input) {\n        id\n        kind\n        displayName\n        config\n        createdAt\n        updatedAt\n        namespace {\n            id\n            namespaceName\n            url\n        }\n        repoCount\n        webhookURL\n        warning\n        lastSyncError\n        lastSyncAt\n        nextSyncAt\n        grantedScopes\n    }\n}",
+								"variables": "{\n  \"input\": {\n    \"kind\": \"\",\n    \"displayName\": \"\",\n    \"config\": \"\",\n    \"namespace\": 0\n  }\n}"
+							}
+						},
+						"url": {
+							"raw": "{{url}}",
+							"host": [
+								"{{url}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateExternalService",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "mutation updateExternalService ($input: UpdateExternalServiceInput!) {\n    updateExternalService (input: $input) {\n        id\n        kind\n        displayName\n        config\n        createdAt\n        updatedAt\n        namespace {\n            id\n            namespaceName\n            url\n        }\n        repoCount\n        webhookURL\n        warning\n        lastSyncError\n        lastSyncAt\n        nextSyncAt\n        grantedScopes\n    }\n}",
+								"variables": "{\n  \"input\": {\n    \"id\": 0,\n    \"displayName\": \"\",\n    \"config\": \"\"\n  }\n}"
+							}
+						},
+						"url": {
+							"raw": "{{url}}",
+							"host": [
+								"{{url}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteExternalService",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "mutation deleteExternalService ($externalService: ID!) {\n    deleteExternalService (externalService: $externalService) {\n        alwaysNil\n    }\n}",
+								"variables": "{\n  \"externalService\": 0\n}"
+							}
+						},
+						"url": {
+							"raw": "{{url}}",
+							"host": [
+								"{{url}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "checkMirrorRepositoryConnection",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "mutation checkMirrorRepositoryConnection ($repository: ID, $name: String) {\n    checkMirrorRepositoryConnection (repository: $repository, name: $name) {\n        error\n    }\n}",
+								"variables": "{\n  \"repository\": 0,\n  \"name\": \"\"\n}"
+							}
+						},
+						"url": {
+							"raw": "{{url}}",
+							"host": [
+								"{{url}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateMirrorRepository",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "mutation updateMirrorRepository ($repository: ID!) {\n    updateMirrorRepository (repository: $repository) {\n        alwaysNil\n    }\n}",
+								"variables": "{\n  \"repository\": 0\n}"
+							}
+						},
+						"url": {
+							"raw": "{{url}}",
+							"host": [
+								"{{url}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "createUser",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "mutation createUser ($username: String!, $email: String) {\n    createUser (username: $username, email: $email) {\n        user {\n            id\n            username\n            displayName\n            avatarURL\n            url\n            settingsURL\n            createdAt\n            updatedAt\n            siteAdmin\n            builtinAuth\n            tags\n            viewerCanAdminister\n            viewerCanChangeUsername\n            databaseID\n            namespaceName\n            urlForSiteAdminBilling\n        }\n        resetPasswordURL\n    }\n}",
+								"variables": "{\n  \"username\": \"\",\n  \"email\": \"\"\n}"
+							}
+						},
+						"url": {
+							"raw": "{{url}}",
+							"host": [
+								"{{url}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "randomizeUserPassword",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "mutation randomizeUserPassword ($user: ID!) {\n    randomizeUserPassword (user: $user) {\n        resetPasswordURL\n    }\n}",
+								"variables": "{\n  \"user\": 0\n}"
+							}
+						},
+						"url": {
+							"raw": "{{url}}",
+							"host": [
+								"{{url}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "addUserEmail",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "mutation addUserEmail ($user: ID!, $email: String!) {\n    addUserEmail (user: $user, email: $email) {\n        alwaysNil\n    }\n}",
+								"variables": "{\n  \"user\": 0,\n  \"email\": \"\"\n}"
+							}
+						},
+						"url": {
+							"raw": "{{url}}",
+							"host": [
+								"{{url}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "removeUserEmail",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "mutation removeUserEmail ($user: ID!, $email: String!) {\n    removeUserEmail (user: $user, email: $email) {\n        alwaysNil\n    }\n}",
+								"variables": "{\n  \"user\": 0,\n  \"email\": \"\"\n}"
+							}
+						},
+						"url": {
+							"raw": "{{url}}",
+							"host": [
+								"{{url}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "setUserEmailPrimary",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "mutation setUserEmailPrimary ($user: ID!, $email: String!) {\n    setUserEmailPrimary (user: $user, email: $email) {\n        alwaysNil\n    }\n}",
+								"variables": "{\n  \"user\": 0,\n  \"email\": \"\"\n}"
+							}
+						},
+						"url": {
+							"raw": "{{url}}",
+							"host": [
+								"{{url}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "setUserEmailVerified",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "mutation setUserEmailVerified ($user: ID!, $email: String!, $verified: Boolean!) {\n    setUserEmailVerified (user: $user, email: $email, verified: $verified) {\n        alwaysNil\n    }\n}",
+								"variables": "{\n  \"user\": 0,\n  \"email\": \"\",\n  \"verified\": true\n}"
+							}
+						},
+						"url": {
+							"raw": "{{url}}",
+							"host": [
+								"{{url}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "resendVerificationEmail",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "mutation resendVerificationEmail ($user: ID!, $email: String!) {\n    resendVerificationEmail (user: $user, email: $email) {\n        alwaysNil\n    }\n}",
+								"variables": "{\n  \"user\": 0,\n  \"email\": \"\"\n}"
+							}
+						},
+						"url": {
+							"raw": "{{url}}",
+							"host": [
+								"{{url}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteUser",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "mutation deleteUser ($user: ID!, $hard: Boolean) {\n    deleteUser (user: $user, hard: $hard) {\n        alwaysNil\n    }\n}",
+								"variables": "{\n  \"user\": 0,\n  \"hard\": true\n}"
+							}
+						},
+						"url": {
+							"raw": "{{url}}",
+							"host": [
+								"{{url}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updatePassword",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "mutation updatePassword ($oldPassword: String!, $newPassword: String!) {\n    updatePassword (oldPassword: $oldPassword, newPassword: $newPassword) {\n        alwaysNil\n    }\n}",
+								"variables": "{\n  \"oldPassword\": \"\",\n  \"newPassword\": \"\"\n}"
+							}
+						},
+						"url": {
+							"raw": "{{url}}",
+							"host": [
+								"{{url}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "createPassword",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "mutation createPassword ($newPassword: String!) {\n    createPassword (newPassword: $newPassword) {\n        alwaysNil\n    }\n}",
+								"variables": "{\n  \"newPassword\": \"\"\n}"
+							}
+						},
+						"url": {
+							"raw": "{{url}}",
+							"host": [
+								"{{url}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "createAccessToken",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "mutation createAccessToken ($user: ID!, $scopes: [String!]!, $note: String!) {\n    createAccessToken (user: $user, scopes: $scopes, note: $note) {\n        id\n        token\n    }\n}",
+								"variables": "{\n  \"user\": 0,\n  \"scopes\": [\n    \"\"\n  ],\n  \"note\": \"\"\n}"
+							}
+						},
+						"url": {
+							"raw": "{{url}}",
+							"host": [
+								"{{url}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteAccessToken",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "mutation deleteAccessToken ($byID: ID, $byToken: String) {\n    deleteAccessToken (byID: $byID, byToken: $byToken) {\n        alwaysNil\n    }\n}",
+								"variables": "{\n  \"byID\": 0,\n  \"byToken\": \"\"\n}"
+							}
+						},
+						"url": {
+							"raw": "{{url}}",
+							"host": [
+								"{{url}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteExternalAccount",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "mutation deleteExternalAccount ($externalAccount: ID!) {\n    deleteExternalAccount (externalAccount: $externalAccount) {\n        alwaysNil\n    }\n}",
+								"variables": "{\n  \"externalAccount\": 0\n}"
+							}
+						},
+						"url": {
+							"raw": "{{url}}",
+							"host": [
+								"{{url}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "inviteUserToOrganization",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "mutation inviteUserToOrganization ($organization: ID!, $username: String!) {\n    inviteUserToOrganization (organization: $organization, username: $username) {\n        sentInvitationEmail\n        invitationURL\n    }\n}",
+								"variables": "{\n  \"organization\": 0,\n  \"username\": \"\"\n}"
+							}
+						},
+						"url": {
+							"raw": "{{url}}",
+							"host": [
+								"{{url}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "respondToOrganizationInvitation",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "mutation respondToOrganizationInvitation ($organizationInvitation: ID!, $responseType: OrganizationInvitationResponseType!) {\n    respondToOrganizationInvitation (organizationInvitation: $organizationInvitation, responseType: $responseType) {\n        alwaysNil\n    }\n}",
+								"variables": "{\n  \"organizationInvitation\": 0,\n  \"responseType\": \"\"\n}"
+							}
+						},
+						"url": {
+							"raw": "{{url}}",
+							"host": [
+								"{{url}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "resendOrganizationInvitationNotification",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "mutation resendOrganizationInvitationNotification ($organizationInvitation: ID!) {\n    resendOrganizationInvitationNotification (organizationInvitation: $organizationInvitation) {\n        alwaysNil\n    }\n}",
+								"variables": "{\n  \"organizationInvitation\": 0\n}"
+							}
+						},
+						"url": {
+							"raw": "{{url}}",
+							"host": [
+								"{{url}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "revokeOrganizationInvitation",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "mutation revokeOrganizationInvitation ($organizationInvitation: ID!) {\n    revokeOrganizationInvitation (organizationInvitation: $organizationInvitation) {\n        alwaysNil\n    }\n}",
+								"variables": "{\n  \"organizationInvitation\": 0\n}"
+							}
+						},
+						"url": {
+							"raw": "{{url}}",
+							"host": [
+								"{{url}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "addUserToOrganization",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "mutation addUserToOrganization ($organization: ID!, $username: String!) {\n    addUserToOrganization (organization: $organization, username: $username) {\n        alwaysNil\n    }\n}",
+								"variables": "{\n  \"organization\": 0,\n  \"username\": \"\"\n}"
+							}
+						},
+						"url": {
+							"raw": "{{url}}",
+							"host": [
+								"{{url}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "removeUserFromOrganization",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "mutation removeUserFromOrganization ($user: ID!, $organization: ID!) {\n    removeUserFromOrganization (user: $user, organization: $organization) {\n        alwaysNil\n    }\n}",
+								"variables": "{\n  \"user\": 0,\n  \"organization\": 0\n}"
+							}
+						},
+						"url": {
+							"raw": "{{url}}",
+							"host": [
+								"{{url}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "setTag",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "mutation setTag ($node: ID!, $tag: String!, $present: Boolean!) {\n    setTag (node: $node, tag: $tag, present: $present) {\n        alwaysNil\n    }\n}",
+								"variables": "{\n  \"node\": 0,\n  \"tag\": \"\",\n  \"present\": true\n}"
+							}
+						},
+						"url": {
+							"raw": "{{url}}",
+							"host": [
+								"{{url}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "addPhabricatorRepo",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "mutation addPhabricatorRepo ($callsign: String!, $name: String, $uri: String, $url: String!) {\n    addPhabricatorRepo (callsign: $callsign, name: $name, uri: $uri, url: $url) {\n        alwaysNil\n    }\n}",
+								"variables": "{\n  \"callsign\": \"\",\n  \"name\": \"\",\n  \"uri\": \"\",\n  \"url\": \"\"\n}"
+							}
+						},
+						"url": {
+							"raw": "{{url}}",
+							"host": [
+								"{{url}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "resolvePhabricatorDiff",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "mutation resolvePhabricatorDiff ($first: Int, $recursive: Boolean, $recursiveSingleChild: Boolean, $path: String, $recursive1: Boolean, $first1: Int, $recursive2: Boolean, $recursiveSingleChild1: Boolean, $path1: String!, $path2: String!, $first2: Int, $query: String, $path3: String, $after: String, $revspec: String!, $repoName: String!, $diffID: ID!, $baseRev: String!, $patch: String, $description: String, $authorName: String, $authorEmail: String, $date: String) {\n    resolvePhabricatorDiff (repoName: $repoName, diffID: $diffID, baseRev: $baseRev, patch: $patch, description: $description, authorName: $authorName, authorEmail: $authorEmail, date: $date) {\n        id\n        repository {\n            id\n            name\n            description\n            language\n            createdAt\n            updatedAt\n            isFork\n            isArchived\n            isPrivate\n            url\n            viewerCanAdminister\n            stars\n        }\n        oid\n        abbreviatedOID\n        author {\n            date\n        }\n        committer {\n            date\n        }\n        message\n        subject\n        body\n        parents {\n            id\n            oid\n            abbreviatedOID\n            message\n            subject\n            body\n            url\n            canonicalURL\n            fileNames\n            languages\n        }\n        url\n        canonicalURL\n        externalURLs {\n            url\n            serviceKind\n        }\n        tree (path: $path, recursive: $recursive1) {\n            path\n            isRoot\n            name\n            isDirectory\n            url\n            canonicalURL\n            rawZipArchiveURL\n            isSingleChild (first: $first, recursive: $recursive, recursiveSingleChild: $recursiveSingleChild)\n        }\n        fileNames\n        blob (path: $path1) {\n            path\n            name\n            isDirectory\n            content\n            byteSize\n            binary\n            richHTML\n            url\n            canonicalURL\n            isSingleChild (first: $first1, recursive: $recursive2, recursiveSingleChild: $recursiveSingleChild1)\n        }\n        file (path: $path2) {\n            path\n            name\n            isDirectory\n            content\n            byteSize\n            binary\n            richHTML\n            url\n            canonicalURL\n        }\n        languages\n        languageStatistics {\n            name\n            totalBytes\n            totalLines\n        }\n        ancestors (first: $first2, query: $query, path: $path3, after: $after) {\n            totalCount\n        }\n        behindAhead (revspec: $revspec) {\n            behind\n            ahead\n        }\n    }\n}",
+								"variables": "{\n  \"first\": 0,\n  \"recursive\": true,\n  \"recursiveSingleChild\": true,\n  \"path\": \"\",\n  \"recursive1\": true,\n  \"first1\": 0,\n  \"recursive2\": true,\n  \"recursiveSingleChild1\": true,\n  \"path1\": \"\",\n  \"path2\": \"\",\n  \"first2\": 0,\n  \"query\": \"\",\n  \"path3\": \"\",\n  \"after\": \"\",\n  \"revspec\": \"\",\n  \"repoName\": \"\",\n  \"diffID\": 0,\n  \"baseRev\": \"\",\n  \"patch\": \"\",\n  \"description\": \"\",\n  \"authorName\": \"\",\n  \"authorEmail\": \"\",\n  \"date\": \"\"\n}"
+							}
+						},
+						"url": {
+							"raw": "{{url}}",
+							"host": [
+								"{{url}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "logEvent",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "mutation logEvent ($event: String!, $userCookieID: String!, $firstSourceURL: String, $url: String!, $source: EventSource!, $cohortID: String, $referrer: String, $argument: String, $publicArgument: String, $deviceID: String, $eventID: Int, $insertID: String) {\n    logEvent (event: $event, userCookieID: $userCookieID, firstSourceURL: $firstSourceURL, url: $url, source: $source, cohortID: $cohortID, referrer: $referrer, argument: $argument, publicArgument: $publicArgument, deviceID: $deviceID, eventID: $eventID, insertID: $insertID) {\n        alwaysNil\n    }\n}",
+								"variables": "{\n  \"event\": \"\",\n  \"userCookieID\": \"\",\n  \"firstSourceURL\": \"\",\n  \"url\": \"\",\n  \"source\": \"\",\n  \"cohortID\": \"\",\n  \"referrer\": \"\",\n  \"argument\": \"\",\n  \"publicArgument\": \"\",\n  \"deviceID\": \"\",\n  \"eventID\": 0,\n  \"insertID\": \"\"\n}"
+							}
+						},
+						"url": {
+							"raw": "{{url}}",
+							"host": [
+								"{{url}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "sendSavedSearchTestNotification",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "mutation sendSavedSearchTestNotification ($id: ID!) {\n    sendSavedSearchTestNotification (id: $id) {\n        alwaysNil\n    }\n}",
+								"variables": "{\n  \"id\": 0\n}"
+							}
+						},
+						"url": {
+							"raw": "{{url}}",
+							"host": [
+								"{{url}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "settingsMutation",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "mutation settingsMutation {\n\n}",
+								"variables": "{}"
+							}
+						},
+						"url": {
+							"raw": "{{url}}",
+							"host": [
+								"{{url}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateSiteConfiguration",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "mutation updateSiteConfiguration ($lastID: Int!, $input: String!) {\n    updateSiteConfiguration (lastID: $lastID, input: $input)\n}",
+								"variables": "{\n  \"lastID\": 0,\n  \"input\": \"\"\n}"
+							}
+						},
+						"url": {
+							"raw": "{{url}}",
+							"host": [
+								"{{url}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "setUserIsSiteAdmin",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "mutation setUserIsSiteAdmin ($userID: ID!, $siteAdmin: Boolean!) {\n    setUserIsSiteAdmin (userID: $userID, siteAdmin: $siteAdmin) {\n        alwaysNil\n    }\n}",
+								"variables": "{\n  \"userID\": 0,\n  \"siteAdmin\": true\n}"
+							}
+						},
+						"url": {
+							"raw": "{{url}}",
+							"host": [
+								"{{url}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "invalidateSessionsByID",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "mutation invalidateSessionsByID ($userID: ID!) {\n    invalidateSessionsByID (userID: $userID) {\n        alwaysNil\n    }\n}",
+								"variables": "{\n  \"userID\": 0\n}"
+							}
+						},
+						"url": {
+							"raw": "{{url}}",
+							"host": [
+								"{{url}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "reloadSite",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "mutation reloadSite {\n    reloadSite {\n        alwaysNil\n    }\n}",
+								"variables": "{}"
+							}
+						},
+						"url": {
+							"raw": "{{url}}",
+							"host": [
+								"{{url}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "submitSurvey",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "mutation submitSurvey ($input: SurveySubmissionInput!) {\n    submitSurvey (input: $input) {\n        alwaysNil\n    }\n}",
+								"variables": "{\n  \"input\": {\n    \"email\": \"\",\n    \"score\": 0,\n    \"reason\": \"\",\n    \"better\": \"\"\n  }\n}"
+							}
+						},
+						"url": {
+							"raw": "{{url}}",
+							"host": [
+								"{{url}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "submitHappinessFeedback",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "mutation submitHappinessFeedback ($input: HappinessFeedbackSubmissionInput!) {\n    submitHappinessFeedback (input: $input) {\n        alwaysNil\n    }\n}",
+								"variables": "{\n  \"input\": {\n    \"score\": 0,\n    \"feedback\": \"\",\n    \"currentPath\": \"\"\n  }\n}"
+							}
+						},
+						"url": {
+							"raw": "{{url}}",
+							"host": [
+								"{{url}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "requestTrial",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "mutation requestTrial ($email: String!) {\n    requestTrial (email: $email) {\n        alwaysNil\n    }\n}",
+								"variables": "{\n  \"email\": \"\"\n}"
+							}
+						},
+						"url": {
+							"raw": "{{url}}",
+							"host": [
+								"{{url}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "extensionRegistry",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "mutation extensionRegistry ($extension: ID!) {\n    extensionRegistry {\n        deleteExtension (extension: $extension) {\n            alwaysNil\n        }\n    }\n}",
+								"variables": "{\n  \"extension\": 0\n}"
+							}
+						},
+						"url": {
+							"raw": "{{url}}",
+							"host": [
+								"{{url}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "createSavedSearch",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "mutation createSavedSearch ($description: String!, $query: String!, $notifyOwner: Boolean!, $notifySlack: Boolean!, $orgID: ID, $userID: ID) {\n    createSavedSearch (description: $description, query: $query, notifyOwner: $notifyOwner, notifySlack: $notifySlack, orgID: $orgID, userID: $userID) {\n        id\n        description\n        query\n        notify\n        notifySlack\n        namespace {\n            id\n            namespaceName\n            url\n        }\n        slackWebhookURL\n    }\n}",
+								"variables": "{\n  \"description\": \"\",\n  \"query\": \"\",\n  \"notifyOwner\": true,\n  \"notifySlack\": true,\n  \"orgID\": 0,\n  \"userID\": 0\n}"
+							}
+						},
+						"url": {
+							"raw": "{{url}}",
+							"host": [
+								"{{url}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateSavedSearch",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "mutation updateSavedSearch ($id: ID!, $description: String!, $query: String!, $notifyOwner: Boolean!, $notifySlack: Boolean!, $orgID: ID, $userID: ID) {\n    updateSavedSearch (id: $id, description: $description, query: $query, notifyOwner: $notifyOwner, notifySlack: $notifySlack, orgID: $orgID, userID: $userID) {\n        id\n        description\n        query\n        notify\n        notifySlack\n        namespace {\n            id\n            namespaceName\n            url\n        }\n        slackWebhookURL\n    }\n}",
+								"variables": "{\n  \"id\": 0,\n  \"description\": \"\",\n  \"query\": \"\",\n  \"notifyOwner\": true,\n  \"notifySlack\": true,\n  \"orgID\": 0,\n  \"userID\": 0\n}"
+							}
+						},
+						"url": {
+							"raw": "{{url}}",
+							"host": [
+								"{{url}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteSavedSearch",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "mutation deleteSavedSearch ($id: ID!) {\n    deleteSavedSearch (id: $id) {\n        alwaysNil\n    }\n}",
+								"variables": "{\n  \"id\": 0\n}"
+							}
+						},
+						"url": {
+							"raw": "{{url}}",
+							"host": [
+								"{{url}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "triggerObservabilityTestAlert",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "mutation triggerObservabilityTestAlert ($level: String!) {\n    triggerObservabilityTestAlert (level: $level) {\n        alwaysNil\n    }\n}",
+								"variables": "{\n  \"level\": \"\"\n}"
+							}
+						},
+						"url": {
+							"raw": "{{url}}",
+							"host": [
+								"{{url}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "setExternalServiceRepos",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "mutation setExternalServiceRepos ($id: ID!, $repos: [String!], $allRepos: Boolean!) {\n    setExternalServiceRepos (id: $id, repos: $repos, allRepos: $allRepos) {\n        alwaysNil\n    }\n}",
+								"variables": "{\n  \"id\": 0,\n  \"repos\": [\n    \"\"\n  ],\n  \"allRepos\": true\n}"
+							}
+						},
+						"url": {
+							"raw": "{{url}}",
+							"host": [
+								"{{url}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "SetMigrationDirection",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "mutation SetMigrationDirection ($id: ID!, $applyReverse: Boolean!) {\n    SetMigrationDirection (id: $id, applyReverse: $applyReverse) {\n        alwaysNil\n    }\n}",
+								"variables": "{\n  \"id\": 0,\n  \"applyReverse\": true\n}"
+							}
+						},
+						"url": {
+							"raw": "{{url}}",
+							"host": [
+								"{{url}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "SetUserPublicRepos",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "mutation SetUserPublicRepos ($userID: ID!, $repoURIs: [String!]!) {\n    SetUserPublicRepos (userID: $userID, repoURIs: $repoURIs) {\n        alwaysNil\n    }\n}",
+								"variables": "{\n  \"userID\": 0,\n  \"repoURIs\": [\n    \"\"\n  ]\n}"
+							}
+						},
+						"url": {
+							"raw": "{{url}}",
+							"host": [
+								"{{url}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "createFeatureFlag",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "mutation createFeatureFlag ($name: String!, $value: Boolean, $rolloutBasisPoints: Int) {\n    createFeatureFlag (name: $name, value: $value, rolloutBasisPoints: $rolloutBasisPoints) {\n        ... on FeatureFlagBoolean {\n            name\n            value\n        }\n        ... on FeatureFlagRollout {\n            name\n            rolloutBasisPoints\n        }\n    }\n}",
+								"variables": "{\n  \"name\": \"\",\n  \"value\": true,\n  \"rolloutBasisPoints\": 0\n}"
+							}
+						},
+						"url": {
+							"raw": "{{url}}",
+							"host": [
+								"{{url}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteFeatureFlag",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "mutation deleteFeatureFlag ($name: String!) {\n    deleteFeatureFlag (name: $name) {\n        alwaysNil\n    }\n}",
+								"variables": "{\n  \"name\": \"\"\n}"
+							}
+						},
+						"url": {
+							"raw": "{{url}}",
+							"host": [
+								"{{url}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateFeatureFlag",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "mutation updateFeatureFlag ($name: String!, $value: Boolean, $rolloutBasisPoints: Int) {\n    updateFeatureFlag (name: $name, value: $value, rolloutBasisPoints: $rolloutBasisPoints) {\n        ... on FeatureFlagBoolean {\n            name\n            value\n        }\n        ... on FeatureFlagRollout {\n            name\n            rolloutBasisPoints\n        }\n    }\n}",
+								"variables": "{\n  \"name\": \"\",\n  \"value\": true,\n  \"rolloutBasisPoints\": 0\n}"
+							}
+						},
+						"url": {
+							"raw": "{{url}}",
+							"host": [
+								"{{url}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "createFeatureFlagOverride",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "mutation createFeatureFlagOverride ($namespace: ID!, $flagName: String!, $value: Boolean!) {\n    createFeatureFlagOverride (namespace: $namespace, flagName: $flagName, value: $value) {\n        id\n        namespace {\n            id\n            namespaceName\n            url\n        }\n        targetFlag {\n            ... on FeatureFlagBoolean {\n                name\n                value\n            }\n            ... on FeatureFlagRollout {\n                name\n                rolloutBasisPoints\n            }\n        }\n        value\n    }\n}",
+								"variables": "{\n  \"namespace\": 0,\n  \"flagName\": \"\",\n  \"value\": true\n}"
+							}
+						},
+						"url": {
+							"raw": "{{url}}",
+							"host": [
+								"{{url}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteFeatureFlagOverride",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "mutation deleteFeatureFlagOverride ($id: ID!) {\n    deleteFeatureFlagOverride (id: $id) {\n        alwaysNil\n    }\n}",
+								"variables": "{\n  \"id\": 0\n}"
+							}
+						},
+						"url": {
+							"raw": "{{url}}",
+							"host": [
+								"{{url}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateFeatureFlagOverride",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "mutation updateFeatureFlagOverride ($id: ID!, $value: Boolean!) {\n    updateFeatureFlagOverride (id: $id, value: $value) {\n        id\n        namespace {\n            id\n            namespaceName\n            url\n        }\n        targetFlag {\n            ... on FeatureFlagBoolean {\n                name\n                value\n            }\n            ... on FeatureFlagRollout {\n                name\n                rolloutBasisPoints\n            }\n        }\n        value\n    }\n}",
+								"variables": "{\n  \"id\": 0,\n  \"value\": true\n}"
+							}
+						},
+						"url": {
+							"raw": "{{url}}",
+							"host": [
+								"{{url}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "overwriteTemporarySettings",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "mutation overwriteTemporarySettings ($contents: String!) {\n    overwriteTemporarySettings (contents: $contents) {\n        alwaysNil\n    }\n}",
+								"variables": "{\n  \"contents\": \"\"\n}"
+							}
+						},
+						"url": {
+							"raw": "{{url}}",
+							"host": [
+								"{{url}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "editTemporarySettings",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "mutation editTemporarySettings ($settingsToEdit: String!) {\n    editTemporarySettings (settingsToEdit: $settingsToEdit) {\n        alwaysNil\n    }\n}",
+								"variables": "{\n  \"settingsToEdit\": \"\"\n}"
+							}
+						},
+						"url": {
+							"raw": "{{url}}",
+							"host": [
+								"{{url}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "createChangesetSpec",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "mutation createChangesetSpec ($changesetSpec: String!) {\n    createChangesetSpec (changesetSpec: $changesetSpec) {\n        id\n        type\n        expiresAt\n    }\n}",
+								"variables": "{\n  \"changesetSpec\": \"\"\n}"
+							}
+						},
+						"url": {
+							"raw": "{{url}}",
+							"host": [
+								"{{url}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "syncChangeset",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "mutation syncChangeset ($changeset: ID!) {\n    syncChangeset (changeset: $changeset) {\n        alwaysNil\n    }\n}",
+								"variables": "{\n  \"changeset\": 0\n}"
+							}
+						},
+						"url": {
+							"raw": "{{url}}",
+							"host": [
+								"{{url}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "reenqueueChangeset",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "mutation reenqueueChangeset ($first: Int, $after: String, $state: BatchChangeState, $viewerCanAdminister: Boolean, $changeset: ID!) {\n    reenqueueChangeset (changeset: $changeset) {\n        id\n        batchChanges (first: $first, after: $after, state: $state, viewerCanAdminister: $viewerCanAdminister) {\n            totalCount\n        }\n        state\n        createdAt\n        updatedAt\n        nextSyncAt\n    }\n}",
+								"variables": "{\n  \"first\": 0,\n  \"after\": \"\",\n  \"state\": \"\",\n  \"viewerCanAdminister\": true,\n  \"changeset\": 0\n}"
+							}
+						},
+						"url": {
+							"raw": "{{url}}",
+							"host": [
+								"{{url}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "createBatchChange",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "mutation createBatchChange ($first: Int, $after: String, $reconcilerState: [ChangesetReconcilerState!], $publicationState: ChangesetPublicationState, $externalState: ChangesetExternalState, $state: ChangesetState, $reviewState: ChangesetReviewState, $checkState: ChangesetCheckState, $onlyPublishedByThisBatchChange: Boolean, $search: String, $onlyArchived: Boolean, $repo: ID, $from: DateTime, $to: DateTime, $includeArchived: Boolean, $first1: Int, $after1: String, $createdAfter: DateTime, $first2: Int, $after2: String, $batchSpec: ID!, $publicationStates: [ChangesetSpecPublicationStateInput!]) {\n    createBatchChange (batchSpec: $batchSpec, publicationStates: $publicationStates) {\n        id\n        namespace {\n            id\n            namespaceName\n            url\n        }\n        name\n        description\n        specCreator {\n            id\n            username\n            displayName\n            avatarURL\n            url\n            settingsURL\n            createdAt\n            updatedAt\n            siteAdmin\n            builtinAuth\n            tags\n            viewerCanAdminister\n            viewerCanChangeUsername\n            databaseID\n            namespaceName\n            urlForSiteAdminBilling\n        }\n        initialApplier {\n            id\n            username\n            displayName\n            avatarURL\n            url\n            settingsURL\n            createdAt\n            updatedAt\n            siteAdmin\n            builtinAuth\n            tags\n            viewerCanAdminister\n            viewerCanChangeUsername\n            databaseID\n            namespaceName\n            urlForSiteAdminBilling\n        }\n        lastApplier {\n            id\n            username\n            displayName\n            avatarURL\n            url\n            settingsURL\n            createdAt\n            updatedAt\n            siteAdmin\n            builtinAuth\n            tags\n            viewerCanAdminister\n            viewerCanChangeUsername\n            databaseID\n            namespaceName\n            urlForSiteAdminBilling\n        }\n        viewerCanAdminister\n        url\n        createdAt\n        updatedAt\n        lastAppliedAt\n        closedAt\n        changesetsStats {\n            unpublished\n            draft\n            open\n            merged\n            closed\n            deleted\n            retrying\n            failed\n            scheduled\n            processing\n            archived\n            total\n        }\n        changesets (first: $first, after: $after, reconcilerState: $reconcilerState, publicationState: $publicationState, externalState: $externalState, state: $state, reviewState: $reviewState, checkState: $checkState, onlyPublishedByThisBatchChange: $onlyPublishedByThisBatchChange, search: $search, onlyArchived: $onlyArchived, repo: $repo) {\n            totalCount\n        }\n        changesetCountsOverTime (from: $from, to: $to, includeArchived: $includeArchived) {\n            date\n            total\n            merged\n            closed\n            draft\n            open\n            openApproved\n            openChangesRequested\n            openPending\n        }\n        diffStat {\n            added\n            changed\n            deleted\n        }\n        currentSpec {\n            id\n            autoApplyEnabled\n            state\n            originalInput\n            parsedInput\n            createdAt\n            startedAt\n            finishedAt\n            expiresAt\n            applyURL\n            viewerCanAdminister\n            failureMessage\n        }\n        bulkOperations (first: $first1, after: $after1, createdAfter: $createdAfter) {\n            totalCount\n        }\n        batchSpecs (first: $first2, after: $after2) {\n            totalCount\n        }\n    }\n}",
+								"variables": "{\n  \"first\": 0,\n  \"after\": \"\",\n  \"reconcilerState\": [\n    \"\"\n  ],\n  \"publicationState\": \"\",\n  \"externalState\": \"\",\n  \"state\": \"\",\n  \"reviewState\": \"\",\n  \"checkState\": \"\",\n  \"onlyPublishedByThisBatchChange\": true,\n  \"search\": \"\",\n  \"onlyArchived\": true,\n  \"repo\": 0,\n  \"from\": \"\",\n  \"to\": \"\",\n  \"includeArchived\": true,\n  \"first1\": 0,\n  \"after1\": \"\",\n  \"createdAfter\": \"\",\n  \"first2\": 0,\n  \"after2\": \"\",\n  \"batchSpec\": 0,\n  \"publicationStates\": {\n    \"changesetSpec\": 0,\n    \"publicationState\": \"\"\n  }\n}"
+							}
+						},
+						"url": {
+							"raw": "{{url}}",
+							"host": [
+								"{{url}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "createBatchSpec",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "mutation createBatchSpec ($first: Int, $after: String, $search: String, $currentState: ChangesetState, $action: ChangesetSpecOperation, $publicationStates: [ChangesetSpecPublicationStateInput!], $first1: Int, $after1: String, $first2: Int, $after2: String, $onlyWithoutCredential: Boolean, $first3: Int, $after3: String, $search1: String, $namespace: ID!, $batchSpec: String!, $changesetSpecs: [ID!]!) {\n    createBatchSpec (namespace: $namespace, batchSpec: $batchSpec, changesetSpecs: $changesetSpecs) {\n        id\n        autoApplyEnabled\n        state\n        originalInput\n        parsedInput\n        description {\n            name\n            description\n        }\n        applyPreview (first: $first, after: $after, search: $search, currentState: $currentState, action: $action, publicationStates: $publicationStates) {\n            totalCount\n            nodes {\n                ... on VisibleChangesetApplyPreview {\n                    operations\n                    targets {\n                        ... on VisibleApplyPreviewTargetsAttach {\n\n                        }\n                        ... on VisibleApplyPreviewTargetsUpdate {\n\n                        }\n                        ... on VisibleApplyPreviewTargetsDetach {\n\n                        }\n                    }\n                }\n                ... on HiddenChangesetApplyPreview {\n                    operations\n                    targets {\n                        ... on HiddenApplyPreviewTargetsAttach {\n\n                        }\n                        ... on HiddenApplyPreviewTargetsUpdate {\n\n                        }\n                        ... on HiddenApplyPreviewTargetsDetach {\n\n                        }\n                    }\n                }\n            }\n        }\n        changesetSpecs (first: $first1, after: $after1) {\n            totalCount\n        }\n        creator {\n            id\n            username\n            displayName\n            avatarURL\n            url\n            settingsURL\n            createdAt\n            updatedAt\n            siteAdmin\n            builtinAuth\n            tags\n            viewerCanAdminister\n            viewerCanChangeUsername\n            databaseID\n            namespaceName\n            urlForSiteAdminBilling\n        }\n        createdAt\n        startedAt\n        finishedAt\n        namespace {\n            id\n            namespaceName\n            url\n        }\n        expiresAt\n        applyURL\n        viewerCanAdminister\n        diffStat {\n            added\n            changed\n            deleted\n        }\n        appliesToBatchChange {\n            id\n            name\n            description\n            viewerCanAdminister\n            url\n            createdAt\n            updatedAt\n            lastAppliedAt\n            closedAt\n        }\n        supersedingBatchSpec {\n            id\n            autoApplyEnabled\n            state\n            originalInput\n            parsedInput\n            createdAt\n            startedAt\n            finishedAt\n            expiresAt\n            applyURL\n            viewerCanAdminister\n            failureMessage\n        }\n        viewerBatchChangesCodeHosts (first: $first2, after: $after2, onlyWithoutCredential: $onlyWithoutCredential) {\n            totalCount\n        }\n        workspaceResolution {\n            failureMessage\n            startedAt\n            finishedAt\n            state\n            allowIgnored\n            allowUnsupported\n        }\n        importingChangesets (first: $first3, after: $after3, search: $search1) {\n            totalCount\n        }\n        failureMessage\n    }\n}",
+								"variables": "{\n  \"first\": 0,\n  \"after\": \"\",\n  \"search\": \"\",\n  \"currentState\": \"\",\n  \"action\": \"\",\n  \"publicationStates\": {\n    \"changesetSpec\": 0,\n    \"publicationState\": \"\"\n  },\n  \"first1\": 0,\n  \"after1\": \"\",\n  \"first2\": 0,\n  \"after2\": \"\",\n  \"onlyWithoutCredential\": true,\n  \"first3\": 0,\n  \"after3\": \"\",\n  \"search1\": \"\",\n  \"namespace\": 0,\n  \"batchSpec\": \"\",\n  \"changesetSpecs\": [\n    0\n  ]\n}"
+							}
+						},
+						"url": {
+							"raw": "{{url}}",
+							"host": [
+								"{{url}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "createBatchSpecFromRaw",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "mutation createBatchSpecFromRaw ($first: Int, $after: String, $search: String, $currentState: ChangesetState, $action: ChangesetSpecOperation, $publicationStates: [ChangesetSpecPublicationStateInput!], $first1: Int, $after1: String, $first2: Int, $after2: String, $onlyWithoutCredential: Boolean, $first3: Int, $after3: String, $search1: String, $batchSpec: String!, $allowIgnored: Boolean, $allowUnsupported: Boolean, $execute: Boolean, $noCache: Boolean, $namespace: ID) {\n    createBatchSpecFromRaw (batchSpec: $batchSpec, allowIgnored: $allowIgnored, allowUnsupported: $allowUnsupported, execute: $execute, noCache: $noCache, namespace: $namespace) {\n        id\n        autoApplyEnabled\n        state\n        originalInput\n        parsedInput\n        description {\n            name\n            description\n        }\n        applyPreview (first: $first, after: $after, search: $search, currentState: $currentState, action: $action, publicationStates: $publicationStates) {\n            totalCount\n            nodes {\n                ... on VisibleChangesetApplyPreview {\n                    operations\n                    targets {\n                        ... on VisibleApplyPreviewTargetsAttach {\n\n                        }\n                        ... on VisibleApplyPreviewTargetsUpdate {\n\n                        }\n                        ... on VisibleApplyPreviewTargetsDetach {\n\n                        }\n                    }\n                }\n                ... on HiddenChangesetApplyPreview {\n                    operations\n                    targets {\n                        ... on HiddenApplyPreviewTargetsAttach {\n\n                        }\n                        ... on HiddenApplyPreviewTargetsUpdate {\n\n                        }\n                        ... on HiddenApplyPreviewTargetsDetach {\n\n                        }\n                    }\n                }\n            }\n        }\n        changesetSpecs (first: $first1, after: $after1) {\n            totalCount\n        }\n        creator {\n            id\n            username\n            displayName\n            avatarURL\n            url\n            settingsURL\n            createdAt\n            updatedAt\n            siteAdmin\n            builtinAuth\n            tags\n            viewerCanAdminister\n            viewerCanChangeUsername\n            databaseID\n            namespaceName\n            urlForSiteAdminBilling\n        }\n        createdAt\n        startedAt\n        finishedAt\n        namespace {\n            id\n            namespaceName\n            url\n        }\n        expiresAt\n        applyURL\n        viewerCanAdminister\n        diffStat {\n            added\n            changed\n            deleted\n        }\n        appliesToBatchChange {\n            id\n            name\n            description\n            viewerCanAdminister\n            url\n            createdAt\n            updatedAt\n            lastAppliedAt\n            closedAt\n        }\n        supersedingBatchSpec {\n            id\n            autoApplyEnabled\n            state\n            originalInput\n            parsedInput\n            createdAt\n            startedAt\n            finishedAt\n            expiresAt\n            applyURL\n            viewerCanAdminister\n            failureMessage\n        }\n        viewerBatchChangesCodeHosts (first: $first2, after: $after2, onlyWithoutCredential: $onlyWithoutCredential) {\n            totalCount\n        }\n        workspaceResolution {\n            failureMessage\n            startedAt\n            finishedAt\n            state\n            allowIgnored\n            allowUnsupported\n        }\n        importingChangesets (first: $first3, after: $after3, search: $search1) {\n            totalCount\n        }\n        failureMessage\n    }\n}",
+								"variables": "{\n  \"first\": 0,\n  \"after\": \"\",\n  \"search\": \"\",\n  \"currentState\": \"\",\n  \"action\": \"\",\n  \"publicationStates\": {\n    \"changesetSpec\": 0,\n    \"publicationState\": \"\"\n  },\n  \"first1\": 0,\n  \"after1\": \"\",\n  \"first2\": 0,\n  \"after2\": \"\",\n  \"onlyWithoutCredential\": true,\n  \"first3\": 0,\n  \"after3\": \"\",\n  \"search1\": \"\",\n  \"batchSpec\": \"\",\n  \"allowIgnored\": true,\n  \"allowUnsupported\": true,\n  \"execute\": true,\n  \"noCache\": true,\n  \"namespace\": 0\n}"
+							}
+						},
+						"url": {
+							"raw": "{{url}}",
+							"host": [
+								"{{url}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "replaceBatchSpecInput",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "mutation replaceBatchSpecInput ($first: Int, $after: String, $search: String, $currentState: ChangesetState, $action: ChangesetSpecOperation, $publicationStates: [ChangesetSpecPublicationStateInput!], $first1: Int, $after1: String, $first2: Int, $after2: String, $onlyWithoutCredential: Boolean, $first3: Int, $after3: String, $search1: String, $previousSpec: ID!, $batchSpec: String!, $allowIgnored: Boolean, $allowUnsupported: Boolean, $execute: Boolean, $noCache: Boolean) {\n    replaceBatchSpecInput (previousSpec: $previousSpec, batchSpec: $batchSpec, allowIgnored: $allowIgnored, allowUnsupported: $allowUnsupported, execute: $execute, noCache: $noCache) {\n        id\n        autoApplyEnabled\n        state\n        originalInput\n        parsedInput\n        description {\n            name\n            description\n        }\n        applyPreview (first: $first, after: $after, search: $search, currentState: $currentState, action: $action, publicationStates: $publicationStates) {\n            totalCount\n            nodes {\n                ... on VisibleChangesetApplyPreview {\n                    operations\n                    targets {\n                        ... on VisibleApplyPreviewTargetsAttach {\n\n                        }\n                        ... on VisibleApplyPreviewTargetsUpdate {\n\n                        }\n                        ... on VisibleApplyPreviewTargetsDetach {\n\n                        }\n                    }\n                }\n                ... on HiddenChangesetApplyPreview {\n                    operations\n                    targets {\n                        ... on HiddenApplyPreviewTargetsAttach {\n\n                        }\n                        ... on HiddenApplyPreviewTargetsUpdate {\n\n                        }\n                        ... on HiddenApplyPreviewTargetsDetach {\n\n                        }\n                    }\n                }\n            }\n        }\n        changesetSpecs (first: $first1, after: $after1) {\n            totalCount\n        }\n        creator {\n            id\n            username\n            displayName\n            avatarURL\n            url\n            settingsURL\n            createdAt\n            updatedAt\n            siteAdmin\n            builtinAuth\n            tags\n            viewerCanAdminister\n            viewerCanChangeUsername\n            databaseID\n            namespaceName\n            urlForSiteAdminBilling\n        }\n        createdAt\n        startedAt\n        finishedAt\n        namespace {\n            id\n            namespaceName\n            url\n        }\n        expiresAt\n        applyURL\n        viewerCanAdminister\n        diffStat {\n            added\n            changed\n            deleted\n        }\n        appliesToBatchChange {\n            id\n            name\n            description\n            viewerCanAdminister\n            url\n            createdAt\n            updatedAt\n            lastAppliedAt\n            closedAt\n        }\n        supersedingBatchSpec {\n            id\n            autoApplyEnabled\n            state\n            originalInput\n            parsedInput\n            createdAt\n            startedAt\n            finishedAt\n            expiresAt\n            applyURL\n            viewerCanAdminister\n            failureMessage\n        }\n        viewerBatchChangesCodeHosts (first: $first2, after: $after2, onlyWithoutCredential: $onlyWithoutCredential) {\n            totalCount\n        }\n        workspaceResolution {\n            failureMessage\n            startedAt\n            finishedAt\n            state\n            allowIgnored\n            allowUnsupported\n        }\n        importingChangesets (first: $first3, after: $after3, search: $search1) {\n            totalCount\n        }\n        failureMessage\n    }\n}",
+								"variables": "{\n  \"first\": 0,\n  \"after\": \"\",\n  \"search\": \"\",\n  \"currentState\": \"\",\n  \"action\": \"\",\n  \"publicationStates\": {\n    \"changesetSpec\": 0,\n    \"publicationState\": \"\"\n  },\n  \"first1\": 0,\n  \"after1\": \"\",\n  \"first2\": 0,\n  \"after2\": \"\",\n  \"onlyWithoutCredential\": true,\n  \"first3\": 0,\n  \"after3\": \"\",\n  \"search1\": \"\",\n  \"previousSpec\": 0,\n  \"batchSpec\": \"\",\n  \"allowIgnored\": true,\n  \"allowUnsupported\": true,\n  \"execute\": true,\n  \"noCache\": true\n}"
+							}
+						},
+						"url": {
+							"raw": "{{url}}",
+							"host": [
+								"{{url}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteBatchSpec",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "mutation deleteBatchSpec ($batchSpec: ID!) {\n    deleteBatchSpec (batchSpec: $batchSpec) {\n        alwaysNil\n    }\n}",
+								"variables": "{\n  \"batchSpec\": 0\n}"
+							}
+						},
+						"url": {
+							"raw": "{{url}}",
+							"host": [
+								"{{url}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "executeBatchSpec",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "mutation executeBatchSpec ($first: Int, $after: String, $search: String, $currentState: ChangesetState, $action: ChangesetSpecOperation, $publicationStates: [ChangesetSpecPublicationStateInput!], $first1: Int, $after1: String, $first2: Int, $after2: String, $onlyWithoutCredential: Boolean, $first3: Int, $after3: String, $search1: String, $batchSpec: ID!, $noCache: Boolean, $autoApply: Boolean) {\n    executeBatchSpec (batchSpec: $batchSpec, noCache: $noCache, autoApply: $autoApply) {\n        id\n        autoApplyEnabled\n        state\n        originalInput\n        parsedInput\n        description {\n            name\n            description\n        }\n        applyPreview (first: $first, after: $after, search: $search, currentState: $currentState, action: $action, publicationStates: $publicationStates) {\n            totalCount\n            nodes {\n                ... on VisibleChangesetApplyPreview {\n                    operations\n                    targets {\n                        ... on VisibleApplyPreviewTargetsAttach {\n\n                        }\n                        ... on VisibleApplyPreviewTargetsUpdate {\n\n                        }\n                        ... on VisibleApplyPreviewTargetsDetach {\n\n                        }\n                    }\n                }\n                ... on HiddenChangesetApplyPreview {\n                    operations\n                    targets {\n                        ... on HiddenApplyPreviewTargetsAttach {\n\n                        }\n                        ... on HiddenApplyPreviewTargetsUpdate {\n\n                        }\n                        ... on HiddenApplyPreviewTargetsDetach {\n\n                        }\n                    }\n                }\n            }\n        }\n        changesetSpecs (first: $first1, after: $after1) {\n            totalCount\n        }\n        creator {\n            id\n            username\n            displayName\n            avatarURL\n            url\n            settingsURL\n            createdAt\n            updatedAt\n            siteAdmin\n            builtinAuth\n            tags\n            viewerCanAdminister\n            viewerCanChangeUsername\n            databaseID\n            namespaceName\n            urlForSiteAdminBilling\n        }\n        createdAt\n        startedAt\n        finishedAt\n        namespace {\n            id\n            namespaceName\n            url\n        }\n        expiresAt\n        applyURL\n        viewerCanAdminister\n        diffStat {\n            added\n            changed\n            deleted\n        }\n        appliesToBatchChange {\n            id\n            name\n            description\n            viewerCanAdminister\n            url\n            createdAt\n            updatedAt\n            lastAppliedAt\n            closedAt\n        }\n        supersedingBatchSpec {\n            id\n            autoApplyEnabled\n            state\n            originalInput\n            parsedInput\n            createdAt\n            startedAt\n            finishedAt\n            expiresAt\n            applyURL\n            viewerCanAdminister\n            failureMessage\n        }\n        viewerBatchChangesCodeHosts (first: $first2, after: $after2, onlyWithoutCredential: $onlyWithoutCredential) {\n            totalCount\n        }\n        workspaceResolution {\n            failureMessage\n            startedAt\n            finishedAt\n            state\n            allowIgnored\n            allowUnsupported\n        }\n        importingChangesets (first: $first3, after: $after3, search: $search1) {\n            totalCount\n        }\n        failureMessage\n    }\n}",
+								"variables": "{\n  \"first\": 0,\n  \"after\": \"\",\n  \"search\": \"\",\n  \"currentState\": \"\",\n  \"action\": \"\",\n  \"publicationStates\": {\n    \"changesetSpec\": 0,\n    \"publicationState\": \"\"\n  },\n  \"first1\": 0,\n  \"after1\": \"\",\n  \"first2\": 0,\n  \"after2\": \"\",\n  \"onlyWithoutCredential\": true,\n  \"first3\": 0,\n  \"after3\": \"\",\n  \"search1\": \"\",\n  \"batchSpec\": 0,\n  \"noCache\": true,\n  \"autoApply\": true\n}"
+							}
+						},
+						"url": {
+							"raw": "{{url}}",
+							"host": [
+								"{{url}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "applyBatchChange",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "mutation applyBatchChange ($first: Int, $after: String, $reconcilerState: [ChangesetReconcilerState!], $publicationState: ChangesetPublicationState, $externalState: ChangesetExternalState, $state: ChangesetState, $reviewState: ChangesetReviewState, $checkState: ChangesetCheckState, $onlyPublishedByThisBatchChange: Boolean, $search: String, $onlyArchived: Boolean, $repo: ID, $from: DateTime, $to: DateTime, $includeArchived: Boolean, $first1: Int, $after1: String, $createdAfter: DateTime, $first2: Int, $after2: String, $batchSpec: ID!, $ensureBatchChange: ID, $publicationStates: [ChangesetSpecPublicationStateInput!]) {\n    applyBatchChange (batchSpec: $batchSpec, ensureBatchChange: $ensureBatchChange, publicationStates: $publicationStates) {\n        id\n        namespace {\n            id\n            namespaceName\n            url\n        }\n        name\n        description\n        specCreator {\n            id\n            username\n            displayName\n            avatarURL\n            url\n            settingsURL\n            createdAt\n            updatedAt\n            siteAdmin\n            builtinAuth\n            tags\n            viewerCanAdminister\n            viewerCanChangeUsername\n            databaseID\n            namespaceName\n            urlForSiteAdminBilling\n        }\n        initialApplier {\n            id\n            username\n            displayName\n            avatarURL\n            url\n            settingsURL\n            createdAt\n            updatedAt\n            siteAdmin\n            builtinAuth\n            tags\n            viewerCanAdminister\n            viewerCanChangeUsername\n            databaseID\n            namespaceName\n            urlForSiteAdminBilling\n        }\n        lastApplier {\n            id\n            username\n            displayName\n            avatarURL\n            url\n            settingsURL\n            createdAt\n            updatedAt\n            siteAdmin\n            builtinAuth\n            tags\n            viewerCanAdminister\n            viewerCanChangeUsername\n            databaseID\n            namespaceName\n            urlForSiteAdminBilling\n        }\n        viewerCanAdminister\n        url\n        createdAt\n        updatedAt\n        lastAppliedAt\n        closedAt\n        changesetsStats {\n            unpublished\n            draft\n            open\n            merged\n            closed\n            deleted\n            retrying\n            failed\n            scheduled\n            processing\n            archived\n            total\n        }\n        changesets (first: $first, after: $after, reconcilerState: $reconcilerState, publicationState: $publicationState, externalState: $externalState, state: $state, reviewState: $reviewState, checkState: $checkState, onlyPublishedByThisBatchChange: $onlyPublishedByThisBatchChange, search: $search, onlyArchived: $onlyArchived, repo: $repo) {\n            totalCount\n        }\n        changesetCountsOverTime (from: $from, to: $to, includeArchived: $includeArchived) {\n            date\n            total\n            merged\n            closed\n            draft\n            open\n            openApproved\n            openChangesRequested\n            openPending\n        }\n        diffStat {\n            added\n            changed\n            deleted\n        }\n        currentSpec {\n            id\n            autoApplyEnabled\n            state\n            originalInput\n            parsedInput\n            createdAt\n            startedAt\n            finishedAt\n            expiresAt\n            applyURL\n            viewerCanAdminister\n            failureMessage\n        }\n        bulkOperations (first: $first1, after: $after1, createdAfter: $createdAfter) {\n            totalCount\n        }\n        batchSpecs (first: $first2, after: $after2) {\n            totalCount\n        }\n    }\n}",
+								"variables": "{\n  \"first\": 0,\n  \"after\": \"\",\n  \"reconcilerState\": [\n    \"\"\n  ],\n  \"publicationState\": \"\",\n  \"externalState\": \"\",\n  \"state\": \"\",\n  \"reviewState\": \"\",\n  \"checkState\": \"\",\n  \"onlyPublishedByThisBatchChange\": true,\n  \"search\": \"\",\n  \"onlyArchived\": true,\n  \"repo\": 0,\n  \"from\": \"\",\n  \"to\": \"\",\n  \"includeArchived\": true,\n  \"first1\": 0,\n  \"after1\": \"\",\n  \"createdAfter\": \"\",\n  \"first2\": 0,\n  \"after2\": \"\",\n  \"batchSpec\": 0,\n  \"ensureBatchChange\": 0,\n  \"publicationStates\": {\n    \"changesetSpec\": 0,\n    \"publicationState\": \"\"\n  }\n}"
+							}
+						},
+						"url": {
+							"raw": "{{url}}",
+							"host": [
+								"{{url}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "closeBatchChange",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "mutation closeBatchChange ($first: Int, $after: String, $reconcilerState: [ChangesetReconcilerState!], $publicationState: ChangesetPublicationState, $externalState: ChangesetExternalState, $state: ChangesetState, $reviewState: ChangesetReviewState, $checkState: ChangesetCheckState, $onlyPublishedByThisBatchChange: Boolean, $search: String, $onlyArchived: Boolean, $repo: ID, $from: DateTime, $to: DateTime, $includeArchived: Boolean, $first1: Int, $after1: String, $createdAfter: DateTime, $first2: Int, $after2: String, $batchChange: ID!, $closeChangesets: Boolean) {\n    closeBatchChange (batchChange: $batchChange, closeChangesets: $closeChangesets) {\n        id\n        namespace {\n            id\n            namespaceName\n            url\n        }\n        name\n        description\n        specCreator {\n            id\n            username\n            displayName\n            avatarURL\n            url\n            settingsURL\n            createdAt\n            updatedAt\n            siteAdmin\n            builtinAuth\n            tags\n            viewerCanAdminister\n            viewerCanChangeUsername\n            databaseID\n            namespaceName\n            urlForSiteAdminBilling\n        }\n        initialApplier {\n            id\n            username\n            displayName\n            avatarURL\n            url\n            settingsURL\n            createdAt\n            updatedAt\n            siteAdmin\n            builtinAuth\n            tags\n            viewerCanAdminister\n            viewerCanChangeUsername\n            databaseID\n            namespaceName\n            urlForSiteAdminBilling\n        }\n        lastApplier {\n            id\n            username\n            displayName\n            avatarURL\n            url\n            settingsURL\n            createdAt\n            updatedAt\n            siteAdmin\n            builtinAuth\n            tags\n            viewerCanAdminister\n            viewerCanChangeUsername\n            databaseID\n            namespaceName\n            urlForSiteAdminBilling\n        }\n        viewerCanAdminister\n        url\n        createdAt\n        updatedAt\n        lastAppliedAt\n        closedAt\n        changesetsStats {\n            unpublished\n            draft\n            open\n            merged\n            closed\n            deleted\n            retrying\n            failed\n            scheduled\n            processing\n            archived\n            total\n        }\n        changesets (first: $first, after: $after, reconcilerState: $reconcilerState, publicationState: $publicationState, externalState: $externalState, state: $state, reviewState: $reviewState, checkState: $checkState, onlyPublishedByThisBatchChange: $onlyPublishedByThisBatchChange, search: $search, onlyArchived: $onlyArchived, repo: $repo) {\n            totalCount\n        }\n        changesetCountsOverTime (from: $from, to: $to, includeArchived: $includeArchived) {\n            date\n            total\n            merged\n            closed\n            draft\n            open\n            openApproved\n            openChangesRequested\n            openPending\n        }\n        diffStat {\n            added\n            changed\n            deleted\n        }\n        currentSpec {\n            id\n            autoApplyEnabled\n            state\n            originalInput\n            parsedInput\n            createdAt\n            startedAt\n            finishedAt\n            expiresAt\n            applyURL\n            viewerCanAdminister\n            failureMessage\n        }\n        bulkOperations (first: $first1, after: $after1, createdAfter: $createdAfter) {\n            totalCount\n        }\n        batchSpecs (first: $first2, after: $after2) {\n            totalCount\n        }\n    }\n}",
+								"variables": "{\n  \"first\": 0,\n  \"after\": \"\",\n  \"reconcilerState\": [\n    \"\"\n  ],\n  \"publicationState\": \"\",\n  \"externalState\": \"\",\n  \"state\": \"\",\n  \"reviewState\": \"\",\n  \"checkState\": \"\",\n  \"onlyPublishedByThisBatchChange\": true,\n  \"search\": \"\",\n  \"onlyArchived\": true,\n  \"repo\": 0,\n  \"from\": \"\",\n  \"to\": \"\",\n  \"includeArchived\": true,\n  \"first1\": 0,\n  \"after1\": \"\",\n  \"createdAfter\": \"\",\n  \"first2\": 0,\n  \"after2\": \"\",\n  \"batchChange\": 0,\n  \"closeChangesets\": true\n}"
+							}
+						},
+						"url": {
+							"raw": "{{url}}",
+							"host": [
+								"{{url}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "moveBatchChange",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "mutation moveBatchChange ($first: Int, $after: String, $reconcilerState: [ChangesetReconcilerState!], $publicationState: ChangesetPublicationState, $externalState: ChangesetExternalState, $state: ChangesetState, $reviewState: ChangesetReviewState, $checkState: ChangesetCheckState, $onlyPublishedByThisBatchChange: Boolean, $search: String, $onlyArchived: Boolean, $repo: ID, $from: DateTime, $to: DateTime, $includeArchived: Boolean, $first1: Int, $after1: String, $createdAfter: DateTime, $first2: Int, $after2: String, $batchChange: ID!, $newName: String, $newNamespace: ID) {\n    moveBatchChange (batchChange: $batchChange, newName: $newName, newNamespace: $newNamespace) {\n        id\n        namespace {\n            id\n            namespaceName\n            url\n        }\n        name\n        description\n        specCreator {\n            id\n            username\n            displayName\n            avatarURL\n            url\n            settingsURL\n            createdAt\n            updatedAt\n            siteAdmin\n            builtinAuth\n            tags\n            viewerCanAdminister\n            viewerCanChangeUsername\n            databaseID\n            namespaceName\n            urlForSiteAdminBilling\n        }\n        initialApplier {\n            id\n            username\n            displayName\n            avatarURL\n            url\n            settingsURL\n            createdAt\n            updatedAt\n            siteAdmin\n            builtinAuth\n            tags\n            viewerCanAdminister\n            viewerCanChangeUsername\n            databaseID\n            namespaceName\n            urlForSiteAdminBilling\n        }\n        lastApplier {\n            id\n            username\n            displayName\n            avatarURL\n            url\n            settingsURL\n            createdAt\n            updatedAt\n            siteAdmin\n            builtinAuth\n            tags\n            viewerCanAdminister\n            viewerCanChangeUsername\n            databaseID\n            namespaceName\n            urlForSiteAdminBilling\n        }\n        viewerCanAdminister\n        url\n        createdAt\n        updatedAt\n        lastAppliedAt\n        closedAt\n        changesetsStats {\n            unpublished\n            draft\n            open\n            merged\n            closed\n            deleted\n            retrying\n            failed\n            scheduled\n            processing\n            archived\n            total\n        }\n        changesets (first: $first, after: $after, reconcilerState: $reconcilerState, publicationState: $publicationState, externalState: $externalState, state: $state, reviewState: $reviewState, checkState: $checkState, onlyPublishedByThisBatchChange: $onlyPublishedByThisBatchChange, search: $search, onlyArchived: $onlyArchived, repo: $repo) {\n            totalCount\n        }\n        changesetCountsOverTime (from: $from, to: $to, includeArchived: $includeArchived) {\n            date\n            total\n            merged\n            closed\n            draft\n            open\n            openApproved\n            openChangesRequested\n            openPending\n        }\n        diffStat {\n            added\n            changed\n            deleted\n        }\n        currentSpec {\n            id\n            autoApplyEnabled\n            state\n            originalInput\n            parsedInput\n            createdAt\n            startedAt\n            finishedAt\n            expiresAt\n            applyURL\n            viewerCanAdminister\n            failureMessage\n        }\n        bulkOperations (first: $first1, after: $after1, createdAfter: $createdAfter) {\n            totalCount\n        }\n        batchSpecs (first: $first2, after: $after2) {\n            totalCount\n        }\n    }\n}",
+								"variables": "{\n  \"first\": 0,\n  \"after\": \"\",\n  \"reconcilerState\": [\n    \"\"\n  ],\n  \"publicationState\": \"\",\n  \"externalState\": \"\",\n  \"state\": \"\",\n  \"reviewState\": \"\",\n  \"checkState\": \"\",\n  \"onlyPublishedByThisBatchChange\": true,\n  \"search\": \"\",\n  \"onlyArchived\": true,\n  \"repo\": 0,\n  \"from\": \"\",\n  \"to\": \"\",\n  \"includeArchived\": true,\n  \"first1\": 0,\n  \"after1\": \"\",\n  \"createdAfter\": \"\",\n  \"first2\": 0,\n  \"after2\": \"\",\n  \"batchChange\": 0,\n  \"newName\": \"\",\n  \"newNamespace\": 0\n}"
+							}
+						},
+						"url": {
+							"raw": "{{url}}",
+							"host": [
+								"{{url}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteBatchChange",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "mutation deleteBatchChange ($batchChange: ID!) {\n    deleteBatchChange (batchChange: $batchChange) {\n        alwaysNil\n    }\n}",
+								"variables": "{\n  \"batchChange\": 0\n}"
+							}
+						},
+						"url": {
+							"raw": "{{url}}",
+							"host": [
+								"{{url}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "createBatchChangesCredential",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "mutation createBatchChangesCredential ($user: ID, $externalServiceKind: ExternalServiceKind!, $externalServiceURL: String!, $credential: String!) {\n    createBatchChangesCredential (user: $user, externalServiceKind: $externalServiceKind, externalServiceURL: $externalServiceURL, credential: $credential) {\n        id\n        externalServiceKind\n        externalServiceURL\n        sshPublicKey\n        createdAt\n        isSiteCredential\n    }\n}",
+								"variables": "{\n  \"user\": 0,\n  \"externalServiceKind\": \"\",\n  \"externalServiceURL\": \"\",\n  \"credential\": \"\"\n}"
+							}
+						},
+						"url": {
+							"raw": "{{url}}",
+							"host": [
+								"{{url}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteBatchChangesCredential",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "mutation deleteBatchChangesCredential ($batchChangesCredential: ID!) {\n    deleteBatchChangesCredential (batchChangesCredential: $batchChangesCredential) {\n        alwaysNil\n    }\n}",
+								"variables": "{\n  \"batchChangesCredential\": 0\n}"
+							}
+						},
+						"url": {
+							"raw": "{{url}}",
+							"host": [
+								"{{url}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "detachChangesets",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "mutation detachChangesets ($batchChange: ID!, $changesets: [ID!]!) {\n    detachChangesets (batchChange: $batchChange, changesets: $changesets) {\n        id\n        type\n        state\n        progress\n        errors {\n            error\n        }\n        createdAt\n        finishedAt\n        initiator {\n            id\n            username\n            displayName\n            avatarURL\n            url\n            settingsURL\n            createdAt\n            updatedAt\n            siteAdmin\n            builtinAuth\n            tags\n            viewerCanAdminister\n            viewerCanChangeUsername\n            databaseID\n            namespaceName\n            urlForSiteAdminBilling\n        }\n        changesetCount\n    }\n}",
+								"variables": "{\n  \"batchChange\": 0,\n  \"changesets\": [\n    0\n  ]\n}"
+							}
+						},
+						"url": {
+							"raw": "{{url}}",
+							"host": [
+								"{{url}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "createChangesetComments",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "mutation createChangesetComments ($batchChange: ID!, $changesets: [ID!]!, $body: String!) {\n    createChangesetComments (batchChange: $batchChange, changesets: $changesets, body: $body) {\n        id\n        type\n        state\n        progress\n        errors {\n            error\n        }\n        createdAt\n        finishedAt\n        initiator {\n            id\n            username\n            displayName\n            avatarURL\n            url\n            settingsURL\n            createdAt\n            updatedAt\n            siteAdmin\n            builtinAuth\n            tags\n            viewerCanAdminister\n            viewerCanChangeUsername\n            databaseID\n            namespaceName\n            urlForSiteAdminBilling\n        }\n        changesetCount\n    }\n}",
+								"variables": "{\n  \"batchChange\": 0,\n  \"changesets\": [\n    0\n  ],\n  \"body\": \"\"\n}"
+							}
+						},
+						"url": {
+							"raw": "{{url}}",
+							"host": [
+								"{{url}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "reenqueueChangesets",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "mutation reenqueueChangesets ($batchChange: ID!, $changesets: [ID!]!) {\n    reenqueueChangesets (batchChange: $batchChange, changesets: $changesets) {\n        id\n        type\n        state\n        progress\n        errors {\n            error\n        }\n        createdAt\n        finishedAt\n        initiator {\n            id\n            username\n            displayName\n            avatarURL\n            url\n            settingsURL\n            createdAt\n            updatedAt\n            siteAdmin\n            builtinAuth\n            tags\n            viewerCanAdminister\n            viewerCanChangeUsername\n            databaseID\n            namespaceName\n            urlForSiteAdminBilling\n        }\n        changesetCount\n    }\n}",
+								"variables": "{\n  \"batchChange\": 0,\n  \"changesets\": [\n    0\n  ]\n}"
+							}
+						},
+						"url": {
+							"raw": "{{url}}",
+							"host": [
+								"{{url}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "mergeChangesets",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "mutation mergeChangesets ($batchChange: ID!, $changesets: [ID!]!, $squash: Boolean) {\n    mergeChangesets (batchChange: $batchChange, changesets: $changesets, squash: $squash) {\n        id\n        type\n        state\n        progress\n        errors {\n            error\n        }\n        createdAt\n        finishedAt\n        initiator {\n            id\n            username\n            displayName\n            avatarURL\n            url\n            settingsURL\n            createdAt\n            updatedAt\n            siteAdmin\n            builtinAuth\n            tags\n            viewerCanAdminister\n            viewerCanChangeUsername\n            databaseID\n            namespaceName\n            urlForSiteAdminBilling\n        }\n        changesetCount\n    }\n}",
+								"variables": "{\n  \"batchChange\": 0,\n  \"changesets\": [\n    0\n  ],\n  \"squash\": true\n}"
+							}
+						},
+						"url": {
+							"raw": "{{url}}",
+							"host": [
+								"{{url}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "closeChangesets",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "mutation closeChangesets ($batchChange: ID!, $changesets: [ID!]!) {\n    closeChangesets (batchChange: $batchChange, changesets: $changesets) {\n        id\n        type\n        state\n        progress\n        errors {\n            error\n        }\n        createdAt\n        finishedAt\n        initiator {\n            id\n            username\n            displayName\n            avatarURL\n            url\n            settingsURL\n            createdAt\n            updatedAt\n            siteAdmin\n            builtinAuth\n            tags\n            viewerCanAdminister\n            viewerCanChangeUsername\n            databaseID\n            namespaceName\n            urlForSiteAdminBilling\n        }\n        changesetCount\n    }\n}",
+								"variables": "{\n  \"batchChange\": 0,\n  \"changesets\": [\n    0\n  ]\n}"
+							}
+						},
+						"url": {
+							"raw": "{{url}}",
+							"host": [
+								"{{url}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "publishChangesets",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "mutation publishChangesets ($batchChange: ID!, $changesets: [ID!]!, $draft: Boolean) {\n    publishChangesets (batchChange: $batchChange, changesets: $changesets, draft: $draft) {\n        id\n        type\n        state\n        progress\n        errors {\n            error\n        }\n        createdAt\n        finishedAt\n        initiator {\n            id\n            username\n            displayName\n            avatarURL\n            url\n            settingsURL\n            createdAt\n            updatedAt\n            siteAdmin\n            builtinAuth\n            tags\n            viewerCanAdminister\n            viewerCanChangeUsername\n            databaseID\n            namespaceName\n            urlForSiteAdminBilling\n        }\n        changesetCount\n    }\n}",
+								"variables": "{\n  \"batchChange\": 0,\n  \"changesets\": [\n    0\n  ],\n  \"draft\": true\n}"
+							}
+						},
+						"url": {
+							"raw": "{{url}}",
+							"host": [
+								"{{url}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "cancelBatchSpecExecution",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "mutation cancelBatchSpecExecution ($first: Int, $after: String, $search: String, $currentState: ChangesetState, $action: ChangesetSpecOperation, $publicationStates: [ChangesetSpecPublicationStateInput!], $first1: Int, $after1: String, $first2: Int, $after2: String, $onlyWithoutCredential: Boolean, $first3: Int, $after3: String, $search1: String, $batchSpec: ID!) {\n    cancelBatchSpecExecution (batchSpec: $batchSpec) {\n        id\n        autoApplyEnabled\n        state\n        originalInput\n        parsedInput\n        description {\n            name\n            description\n        }\n        applyPreview (first: $first, after: $after, search: $search, currentState: $currentState, action: $action, publicationStates: $publicationStates) {\n            totalCount\n            nodes {\n                ... on VisibleChangesetApplyPreview {\n                    operations\n                    targets {\n                        ... on VisibleApplyPreviewTargetsAttach {\n\n                        }\n                        ... on VisibleApplyPreviewTargetsUpdate {\n\n                        }\n                        ... on VisibleApplyPreviewTargetsDetach {\n\n                        }\n                    }\n                }\n                ... on HiddenChangesetApplyPreview {\n                    operations\n                    targets {\n                        ... on HiddenApplyPreviewTargetsAttach {\n\n                        }\n                        ... on HiddenApplyPreviewTargetsUpdate {\n\n                        }\n                        ... on HiddenApplyPreviewTargetsDetach {\n\n                        }\n                    }\n                }\n            }\n        }\n        changesetSpecs (first: $first1, after: $after1) {\n            totalCount\n        }\n        creator {\n            id\n            username\n            displayName\n            avatarURL\n            url\n            settingsURL\n            createdAt\n            updatedAt\n            siteAdmin\n            builtinAuth\n            tags\n            viewerCanAdminister\n            viewerCanChangeUsername\n            databaseID\n            namespaceName\n            urlForSiteAdminBilling\n        }\n        createdAt\n        startedAt\n        finishedAt\n        namespace {\n            id\n            namespaceName\n            url\n        }\n        expiresAt\n        applyURL\n        viewerCanAdminister\n        diffStat {\n            added\n            changed\n            deleted\n        }\n        appliesToBatchChange {\n            id\n            name\n            description\n            viewerCanAdminister\n            url\n            createdAt\n            updatedAt\n            lastAppliedAt\n            closedAt\n        }\n        supersedingBatchSpec {\n            id\n            autoApplyEnabled\n            state\n            originalInput\n            parsedInput\n            createdAt\n            startedAt\n            finishedAt\n            expiresAt\n            applyURL\n            viewerCanAdminister\n            failureMessage\n        }\n        viewerBatchChangesCodeHosts (first: $first2, after: $after2, onlyWithoutCredential: $onlyWithoutCredential) {\n            totalCount\n        }\n        workspaceResolution {\n            failureMessage\n            startedAt\n            finishedAt\n            state\n            allowIgnored\n            allowUnsupported\n        }\n        importingChangesets (first: $first3, after: $after3, search: $search1) {\n            totalCount\n        }\n        failureMessage\n    }\n}",
+								"variables": "{\n  \"first\": 0,\n  \"after\": \"\",\n  \"search\": \"\",\n  \"currentState\": \"\",\n  \"action\": \"\",\n  \"publicationStates\": {\n    \"changesetSpec\": 0,\n    \"publicationState\": \"\"\n  },\n  \"first1\": 0,\n  \"after1\": \"\",\n  \"first2\": 0,\n  \"after2\": \"\",\n  \"onlyWithoutCredential\": true,\n  \"first3\": 0,\n  \"after3\": \"\",\n  \"search1\": \"\",\n  \"batchSpec\": 0\n}"
+							}
+						},
+						"url": {
+							"raw": "{{url}}",
+							"host": [
+								"{{url}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "cancelBatchSpecWorkspaceExecution",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "mutation cancelBatchSpecWorkspaceExecution ($batchSpecWorkspaces: [ID!]!) {\n    cancelBatchSpecWorkspaceExecution (batchSpecWorkspaces: $batchSpecWorkspaces) {\n        alwaysNil\n    }\n}",
+								"variables": "{\n  \"batchSpecWorkspaces\": [\n    0\n  ]\n}"
+							}
+						},
+						"url": {
+							"raw": "{{url}}",
+							"host": [
+								"{{url}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "retryBatchSpecWorkspaceExecution",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "mutation retryBatchSpecWorkspaceExecution ($batchSpecWorkspaces: [ID!]!) {\n    retryBatchSpecWorkspaceExecution (batchSpecWorkspaces: $batchSpecWorkspaces) {\n        alwaysNil\n    }\n}",
+								"variables": "{\n  \"batchSpecWorkspaces\": [\n    0\n  ]\n}"
+							}
+						},
+						"url": {
+							"raw": "{{url}}",
+							"host": [
+								"{{url}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "retryBatchSpecExecution",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "mutation retryBatchSpecExecution ($batchSpec: ID!) {\n    retryBatchSpecExecution (batchSpec: $batchSpec) {\n        alwaysNil\n    }\n}",
+								"variables": "{\n  \"batchSpec\": 0\n}"
+							}
+						},
+						"url": {
+							"raw": "{{url}}",
+							"host": [
+								"{{url}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "enqueueBatchSpecWorkspaceExecution",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "mutation enqueueBatchSpecWorkspaceExecution ($batchSpecWorkspaces: [ID!]!) {\n    enqueueBatchSpecWorkspaceExecution (batchSpecWorkspaces: $batchSpecWorkspaces) {\n        alwaysNil\n    }\n}",
+								"variables": "{\n  \"batchSpecWorkspaces\": [\n    0\n  ]\n}"
+							}
+						},
+						"url": {
+							"raw": "{{url}}",
+							"host": [
+								"{{url}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "toggleBatchSpecAutoApply",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "mutation toggleBatchSpecAutoApply ($first: Int, $after: String, $search: String, $currentState: ChangesetState, $action: ChangesetSpecOperation, $publicationStates: [ChangesetSpecPublicationStateInput!], $first1: Int, $after1: String, $first2: Int, $after2: String, $onlyWithoutCredential: Boolean, $first3: Int, $after3: String, $search1: String, $batchSpec: ID!, $value: Boolean!) {\n    toggleBatchSpecAutoApply (batchSpec: $batchSpec, value: $value) {\n        id\n        autoApplyEnabled\n        state\n        originalInput\n        parsedInput\n        description {\n            name\n            description\n        }\n        applyPreview (first: $first, after: $after, search: $search, currentState: $currentState, action: $action, publicationStates: $publicationStates) {\n            totalCount\n            nodes {\n                ... on VisibleChangesetApplyPreview {\n                    operations\n                    targets {\n                        ... on VisibleApplyPreviewTargetsAttach {\n\n                        }\n                        ... on VisibleApplyPreviewTargetsUpdate {\n\n                        }\n                        ... on VisibleApplyPreviewTargetsDetach {\n\n                        }\n                    }\n                }\n                ... on HiddenChangesetApplyPreview {\n                    operations\n                    targets {\n                        ... on HiddenApplyPreviewTargetsAttach {\n\n                        }\n                        ... on HiddenApplyPreviewTargetsUpdate {\n\n                        }\n                        ... on HiddenApplyPreviewTargetsDetach {\n\n                        }\n                    }\n                }\n            }\n        }\n        changesetSpecs (first: $first1, after: $after1) {\n            totalCount\n        }\n        creator {\n            id\n            username\n            displayName\n            avatarURL\n            url\n            settingsURL\n            createdAt\n            updatedAt\n            siteAdmin\n            builtinAuth\n            tags\n            viewerCanAdminister\n            viewerCanChangeUsername\n            databaseID\n            namespaceName\n            urlForSiteAdminBilling\n        }\n        createdAt\n        startedAt\n        finishedAt\n        namespace {\n            id\n            namespaceName\n            url\n        }\n        expiresAt\n        applyURL\n        viewerCanAdminister\n        diffStat {\n            added\n            changed\n            deleted\n        }\n        appliesToBatchChange {\n            id\n            name\n            description\n            viewerCanAdminister\n            url\n            createdAt\n            updatedAt\n            lastAppliedAt\n            closedAt\n        }\n        supersedingBatchSpec {\n            id\n            autoApplyEnabled\n            state\n            originalInput\n            parsedInput\n            createdAt\n            startedAt\n            finishedAt\n            expiresAt\n            applyURL\n            viewerCanAdminister\n            failureMessage\n        }\n        viewerBatchChangesCodeHosts (first: $first2, after: $after2, onlyWithoutCredential: $onlyWithoutCredential) {\n            totalCount\n        }\n        workspaceResolution {\n            failureMessage\n            startedAt\n            finishedAt\n            state\n            allowIgnored\n            allowUnsupported\n        }\n        importingChangesets (first: $first3, after: $after3, search: $search1) {\n            totalCount\n        }\n        failureMessage\n    }\n}",
+								"variables": "{\n  \"first\": 0,\n  \"after\": \"\",\n  \"search\": \"\",\n  \"currentState\": \"\",\n  \"action\": \"\",\n  \"publicationStates\": {\n    \"changesetSpec\": 0,\n    \"publicationState\": \"\"\n  },\n  \"first1\": 0,\n  \"after1\": \"\",\n  \"first2\": 0,\n  \"after2\": \"\",\n  \"onlyWithoutCredential\": true,\n  \"first3\": 0,\n  \"after3\": \"\",\n  \"search1\": \"\",\n  \"batchSpec\": 0,\n  \"value\": true\n}"
+							}
+						},
+						"url": {
+							"raw": "{{url}}",
+							"host": [
+								"{{url}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "createCodeIntelligenceConfigurationPolicy",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "mutation createCodeIntelligenceConfigurationPolicy ($repository: ID, $name: String!, $type: GitObjectType!, $pattern: String!, $retentionEnabled: Boolean!, $retentionDurationHours: Int, $retainIntermediateCommits: Boolean!, $indexingEnabled: Boolean!, $indexCommitMaxAgeHours: Int, $indexIntermediateCommits: Boolean!) {\n    createCodeIntelligenceConfigurationPolicy (repository: $repository, name: $name, type: $type, pattern: $pattern, retentionEnabled: $retentionEnabled, retentionDurationHours: $retentionDurationHours, retainIntermediateCommits: $retainIntermediateCommits, indexingEnabled: $indexingEnabled, indexCommitMaxAgeHours: $indexCommitMaxAgeHours, indexIntermediateCommits: $indexIntermediateCommits) {\n        id\n        name\n        type\n        pattern\n        protected\n        retentionEnabled\n        retentionDurationHours\n        retainIntermediateCommits\n        indexingEnabled\n        indexCommitMaxAgeHours\n        indexIntermediateCommits\n    }\n}",
+								"variables": "{\n  \"repository\": 0,\n  \"name\": \"\",\n  \"type\": \"\",\n  \"pattern\": \"\",\n  \"retentionEnabled\": true,\n  \"retentionDurationHours\": 0,\n  \"retainIntermediateCommits\": true,\n  \"indexingEnabled\": true,\n  \"indexCommitMaxAgeHours\": 0,\n  \"indexIntermediateCommits\": true\n}"
+							}
+						},
+						"url": {
+							"raw": "{{url}}",
+							"host": [
+								"{{url}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateCodeIntelligenceConfigurationPolicy",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "mutation updateCodeIntelligenceConfigurationPolicy ($id: ID!, $name: String!, $type: GitObjectType!, $pattern: String!, $retentionEnabled: Boolean!, $retentionDurationHours: Int, $retainIntermediateCommits: Boolean!, $indexingEnabled: Boolean!, $indexCommitMaxAgeHours: Int, $indexIntermediateCommits: Boolean!) {\n    updateCodeIntelligenceConfigurationPolicy (id: $id, name: $name, type: $type, pattern: $pattern, retentionEnabled: $retentionEnabled, retentionDurationHours: $retentionDurationHours, retainIntermediateCommits: $retainIntermediateCommits, indexingEnabled: $indexingEnabled, indexCommitMaxAgeHours: $indexCommitMaxAgeHours, indexIntermediateCommits: $indexIntermediateCommits) {\n        alwaysNil\n    }\n}",
+								"variables": "{\n  \"id\": 0,\n  \"name\": \"\",\n  \"type\": \"\",\n  \"pattern\": \"\",\n  \"retentionEnabled\": true,\n  \"retentionDurationHours\": 0,\n  \"retainIntermediateCommits\": true,\n  \"indexingEnabled\": true,\n  \"indexCommitMaxAgeHours\": 0,\n  \"indexIntermediateCommits\": true\n}"
+							}
+						},
+						"url": {
+							"raw": "{{url}}",
+							"host": [
+								"{{url}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteCodeIntelligenceConfigurationPolicy",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "mutation deleteCodeIntelligenceConfigurationPolicy ($policy: ID!) {\n    deleteCodeIntelligenceConfigurationPolicy (policy: $policy) {\n        alwaysNil\n    }\n}",
+								"variables": "{\n  \"policy\": 0\n}"
+							}
+						},
+						"url": {
+							"raw": "{{url}}",
+							"host": [
+								"{{url}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateRepositoryIndexConfiguration",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "mutation updateRepositoryIndexConfiguration ($repository: ID!, $configuration: String!) {\n    updateRepositoryIndexConfiguration (repository: $repository, configuration: $configuration) {\n        alwaysNil\n    }\n}",
+								"variables": "{\n  \"repository\": 0,\n  \"configuration\": \"\"\n}"
+							}
+						},
+						"url": {
+							"raw": "{{url}}",
+							"host": [
+								"{{url}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "queueAutoIndexJobsForRepo",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "mutation queueAutoIndexJobsForRepo ($first: Int, $recursive: Boolean, $recursiveSingleChild: Boolean, $repository: ID!, $rev: String, $configuration: String) {\n    queueAutoIndexJobsForRepo (repository: $repository, rev: $rev, configuration: $configuration) {\n        id\n        projectRoot {\n            path\n            isRoot\n            name\n            isDirectory\n            url\n            canonicalURL\n            rawZipArchiveURL\n            isSingleChild (first: $first, recursive: $recursive, recursiveSingleChild: $recursiveSingleChild)\n        }\n        inputCommit\n        inputRoot\n        inputIndexer\n        state\n        queuedAt\n        startedAt\n        finishedAt\n        failure\n        placeInQueue\n        associatedUpload {\n            id\n            inputCommit\n            inputRoot\n            inputIndexer\n            state\n            uploadedAt\n            startedAt\n            finishedAt\n            failure\n            isLatestForRepo\n            placeInQueue\n        }\n    }\n}",
+								"variables": "{\n  \"first\": 0,\n  \"recursive\": true,\n  \"recursiveSingleChild\": true,\n  \"repository\": 0,\n  \"rev\": \"\",\n  \"configuration\": \"\"\n}"
+							}
+						},
+						"url": {
+							"raw": "{{url}}",
+							"host": [
+								"{{url}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteLSIFUpload",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "mutation deleteLSIFUpload ($id: ID!) {\n    deleteLSIFUpload (id: $id) {\n        alwaysNil\n    }\n}",
+								"variables": "{\n  \"id\": 0\n}"
+							}
+						},
+						"url": {
+							"raw": "{{url}}",
+							"host": [
+								"{{url}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteLSIFIndex",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "mutation deleteLSIFIndex ($id: ID!) {\n    deleteLSIFIndex (id: $id) {\n        alwaysNil\n    }\n}",
+								"variables": "{\n  \"id\": 0\n}"
+							}
+						},
+						"url": {
+							"raw": "{{url}}",
+							"host": [
+								"{{url}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "createInsightsDashboard",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "mutation createInsightsDashboard ($input: CreateInsightsDashboardInput!) {\n    createInsightsDashboard (input: $input) {\n        dashboard {\n            id\n            title\n        }\n    }\n}",
+								"variables": "{\n  \"input\": {\n    \"title\": \"\",\n    \"grants\": {\n      \"users\": [\n        0\n      ],\n      \"organizations\": [\n        0\n      ],\n      \"global\": true\n    }\n  }\n}"
+							}
+						},
+						"url": {
+							"raw": "{{url}}",
+							"host": [
+								"{{url}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateInsightsDashboard",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "mutation updateInsightsDashboard ($id: ID!, $input: UpdateInsightsDashboardInput!) {\n    updateInsightsDashboard (id: $id, input: $input) {\n        dashboard {\n            id\n            title\n        }\n    }\n}",
+								"variables": "{\n  \"id\": 0,\n  \"input\": {\n    \"title\": \"\",\n    \"grants\": {\n      \"users\": [\n        0\n      ],\n      \"organizations\": [\n        0\n      ],\n      \"global\": true\n    }\n  }\n}"
+							}
+						},
+						"url": {
+							"raw": "{{url}}",
+							"host": [
+								"{{url}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteInsightsDashboard",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "mutation deleteInsightsDashboard ($id: ID!) {\n    deleteInsightsDashboard (id: $id) {\n        alwaysNil\n    }\n}",
+								"variables": "{\n  \"id\": 0\n}"
+							}
+						},
+						"url": {
+							"raw": "{{url}}",
+							"host": [
+								"{{url}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "addInsightViewToDashboard",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "mutation addInsightViewToDashboard ($input: AddInsightViewToDashboardInput!) {\n    addInsightViewToDashboard (input: $input) {\n        dashboard {\n            id\n            title\n        }\n    }\n}",
+								"variables": "{\n  \"input\": {\n    \"insightViewId\": 0,\n    \"dashboardId\": 0\n  }\n}"
+							}
+						},
+						"url": {
+							"raw": "{{url}}",
+							"host": [
+								"{{url}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "removeInsightViewFromDashboard",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "mutation removeInsightViewFromDashboard ($input: RemoveInsightViewFromDashboardInput!) {\n    removeInsightViewFromDashboard (input: $input) {\n        dashboard {\n            id\n            title\n        }\n    }\n}",
+								"variables": "{\n  \"input\": {\n    \"insightViewId\": 0,\n    \"dashboardId\": 0\n  }\n}"
+							}
+						},
+						"url": {
+							"raw": "{{url}}",
+							"host": [
+								"{{url}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "setRepositoryPermissionsForUsers",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "mutation setRepositoryPermissionsForUsers ($repository: ID!, $userPermissions: [UserPermission!]!) {\n    setRepositoryPermissionsForUsers (repository: $repository, userPermissions: $userPermissions) {\n        alwaysNil\n    }\n}",
+								"variables": "{\n  \"repository\": 0,\n  \"userPermissions\": {\n    \"bindID\": \"\",\n    \"permission\": \"\"\n  }\n}"
+							}
+						},
+						"url": {
+							"raw": "{{url}}",
+							"host": [
+								"{{url}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "scheduleRepositoryPermissionsSync",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "mutation scheduleRepositoryPermissionsSync ($repository: ID!) {\n    scheduleRepositoryPermissionsSync (repository: $repository) {\n        alwaysNil\n    }\n}",
+								"variables": "{\n  \"repository\": 0\n}"
+							}
+						},
+						"url": {
+							"raw": "{{url}}",
+							"host": [
+								"{{url}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "scheduleUserPermissionsSync",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "mutation scheduleUserPermissionsSync ($user: ID!, $options: FetchPermissionsOptions) {\n    scheduleUserPermissionsSync (user: $user, options: $options) {\n        alwaysNil\n    }\n}",
+								"variables": "{\n  \"user\": 0,\n  \"options\": {\n    \"invalidateCaches\": true\n  }\n}"
+							}
+						},
+						"url": {
+							"raw": "{{url}}",
+							"host": [
+								"{{url}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "createCodeMonitor",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "mutation createCodeMonitor ($first: Int, $after: String, $monitor: MonitorInput!, $trigger: MonitorTriggerInput!, $actions: [MonitorActionInput!]!) {\n    createCodeMonitor (monitor: $monitor, trigger: $trigger, actions: $actions) {\n        id\n        createdBy {\n            id\n            username\n            displayName\n            avatarURL\n            url\n            settingsURL\n            createdAt\n            updatedAt\n            siteAdmin\n            builtinAuth\n            tags\n            viewerCanAdminister\n            viewerCanChangeUsername\n            databaseID\n            namespaceName\n            urlForSiteAdminBilling\n        }\n        createdAt\n        description\n        owner {\n            id\n            namespaceName\n            url\n        }\n        enabled\n        trigger {\n            ... on MonitorQuery {\n                id\n                query\n            }\n        }\n        actions (first: $first, after: $after) {\n            nodes {\n                ... on MonitorEmail {\n                    id\n                    enabled\n                    priority\n                    header\n                }\n            }\n            totalCount\n        }\n    }\n}",
+								"variables": "{\n  \"first\": 0,\n  \"after\": \"\",\n  \"monitor\": {\n    \"namespace\": 0,\n    \"description\": \"\",\n    \"enabled\": true\n  },\n  \"trigger\": {\n    \"query\": \"\"\n  },\n  \"actions\": {\n    \"email\": {\n      \"enabled\": true,\n      \"priority\": \"\",\n      \"recipients\": [\n        0\n      ],\n      \"header\": \"\"\n    }\n  }\n}"
+							}
+						},
+						"url": {
+							"raw": "{{url}}",
+							"host": [
+								"{{url}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "toggleCodeMonitor",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "mutation toggleCodeMonitor ($first: Int, $after: String, $id: ID!, $enabled: Boolean!) {\n    toggleCodeMonitor (id: $id, enabled: $enabled) {\n        id\n        createdBy {\n            id\n            username\n            displayName\n            avatarURL\n            url\n            settingsURL\n            createdAt\n            updatedAt\n            siteAdmin\n            builtinAuth\n            tags\n            viewerCanAdminister\n            viewerCanChangeUsername\n            databaseID\n            namespaceName\n            urlForSiteAdminBilling\n        }\n        createdAt\n        description\n        owner {\n            id\n            namespaceName\n            url\n        }\n        enabled\n        trigger {\n            ... on MonitorQuery {\n                id\n                query\n            }\n        }\n        actions (first: $first, after: $after) {\n            nodes {\n                ... on MonitorEmail {\n                    id\n                    enabled\n                    priority\n                    header\n                }\n            }\n            totalCount\n        }\n    }\n}",
+								"variables": "{\n  \"first\": 0,\n  \"after\": \"\",\n  \"id\": 0,\n  \"enabled\": true\n}"
+							}
+						},
+						"url": {
+							"raw": "{{url}}",
+							"host": [
+								"{{url}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteCodeMonitor",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "mutation deleteCodeMonitor ($id: ID!) {\n    deleteCodeMonitor (id: $id) {\n        alwaysNil\n    }\n}",
+								"variables": "{\n  \"id\": 0\n}"
+							}
+						},
+						"url": {
+							"raw": "{{url}}",
+							"host": [
+								"{{url}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateCodeMonitor",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "mutation updateCodeMonitor ($first: Int, $after: String, $monitor: MonitorEditInput!, $trigger: MonitorEditTriggerInput!, $actions: [MonitorEditActionInput!]!) {\n    updateCodeMonitor (monitor: $monitor, trigger: $trigger, actions: $actions) {\n        id\n        createdBy {\n            id\n            username\n            displayName\n            avatarURL\n            url\n            settingsURL\n            createdAt\n            updatedAt\n            siteAdmin\n            builtinAuth\n            tags\n            viewerCanAdminister\n            viewerCanChangeUsername\n            databaseID\n            namespaceName\n            urlForSiteAdminBilling\n        }\n        createdAt\n        description\n        owner {\n            id\n            namespaceName\n            url\n        }\n        enabled\n        trigger {\n            ... on MonitorQuery {\n                id\n                query\n            }\n        }\n        actions (first: $first, after: $after) {\n            nodes {\n                ... on MonitorEmail {\n                    id\n                    enabled\n                    priority\n                    header\n                }\n            }\n            totalCount\n        }\n    }\n}",
+								"variables": "{\n  \"first\": 0,\n  \"after\": \"\",\n  \"monitor\": {\n    \"id\": 0,\n    \"update\": {\n      \"namespace\": 0,\n      \"description\": \"\",\n      \"enabled\": true\n    }\n  },\n  \"trigger\": {\n    \"id\": 0,\n    \"update\": {\n      \"query\": \"\"\n    }\n  },\n  \"actions\": {\n    \"email\": {\n      \"id\": 0,\n      \"update\": {}\n    }\n  }\n}"
+							}
+						},
+						"url": {
+							"raw": "{{url}}",
+							"host": [
+								"{{url}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "resetTriggerQueryTimestamps",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "mutation resetTriggerQueryTimestamps ($id: ID!) {\n    resetTriggerQueryTimestamps (id: $id) {\n        alwaysNil\n    }\n}",
+								"variables": "{\n  \"id\": 0\n}"
+							}
+						},
+						"url": {
+							"raw": "{{url}}",
+							"host": [
+								"{{url}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "triggerTestEmailAction",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "mutation triggerTestEmailAction ($namespace: ID!, $description: String!, $email: MonitorEmailInput!) {\n    triggerTestEmailAction (namespace: $namespace, description: $description, email: $email) {\n        alwaysNil\n    }\n}",
+								"variables": "{\n  \"namespace\": 0,\n  \"description\": \"\",\n  \"email\": {\n    \"enabled\": true,\n    \"priority\": \"\",\n    \"recipients\": [\n      0\n    ],\n    \"header\": \"\"\n  }\n}"
+							}
+						},
+						"url": {
+							"raw": "{{url}}",
+							"host": [
+								"{{url}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "dotcom",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "mutation dotcom ($user: ID!, $billingCustomerID: String, $accountID: ID!, $id: ID!, $billingSubscriptionID: String, $productSubscriptionID: ID!, $license: ProductLicenseInput!, $id1: ID!) {\n    dotcom {\n        setUserBilling (user: $user, billingCustomerID: $billingCustomerID) {\n            alwaysNil\n        }\n        createProductSubscription (accountID: $accountID) {\n            id\n            uuid\n            name\n            createdAt\n            isArchived\n            url\n            urlForSiteAdmin\n            urlForSiteAdminBilling\n        }\n        setProductSubscriptionBilling (id: $id, billingSubscriptionID: $billingSubscriptionID) {\n            alwaysNil\n        }\n        generateProductLicenseForSubscription (productSubscriptionID: $productSubscriptionID, license: $license) {\n            id\n            licenseKey\n            createdAt\n        }\n        archiveProductSubscription (id: $id1) {\n            alwaysNil\n        }\n    }\n}",
+								"variables": "{\n  \"user\": 0,\n  \"billingCustomerID\": \"\",\n  \"accountID\": 0,\n  \"id\": 0,\n  \"billingSubscriptionID\": \"\",\n  \"productSubscriptionID\": 0,\n  \"license\": {\n    \"tags\": [\n      \"\"\n    ],\n    \"userCount\": 0,\n    \"expiresAt\": 0\n  },\n  \"id1\": 0\n}"
+							}
+						},
+						"url": {
+							"raw": "{{url}}",
+							"host": [
+								"{{url}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "convertVersionContextToSearchContext",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "mutation convertVersionContextToSearchContext ($name: String!) {\n    convertVersionContextToSearchContext (name: $name) {\n        id\n        name\n        namespace {\n            id\n            namespaceName\n            url\n        }\n        description\n        spec\n        autoDefined\n        repositories {\n            revisions\n        }\n        public\n        updatedAt\n        viewerCanManage\n    }\n}",
+								"variables": "{\n  \"name\": \"\"\n}"
+							}
+						},
+						"url": {
+							"raw": "{{url}}",
+							"host": [
+								"{{url}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "createSearchContext",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "mutation createSearchContext ($searchContext: SearchContextInput!, $repositories: [SearchContextRepositoryRevisionsInput!]!) {\n    createSearchContext (searchContext: $searchContext, repositories: $repositories) {\n        id\n        name\n        namespace {\n            id\n            namespaceName\n            url\n        }\n        description\n        spec\n        autoDefined\n        repositories {\n            revisions\n        }\n        public\n        updatedAt\n        viewerCanManage\n    }\n}",
+								"variables": "{\n  \"searchContext\": {\n    \"name\": \"\",\n    \"description\": \"\",\n    \"public\": true,\n    \"namespace\": 0\n  },\n  \"repositories\": {\n    \"repositoryID\": 0,\n    \"revisions\": [\n      \"\"\n    ]\n  }\n}"
+							}
+						},
+						"url": {
+							"raw": "{{url}}",
+							"host": [
+								"{{url}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteSearchContext",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "mutation deleteSearchContext ($id: ID!) {\n    deleteSearchContext (id: $id) {\n        alwaysNil\n    }\n}",
+								"variables": "{\n  \"id\": 0\n}"
+							}
+						},
+						"url": {
+							"raw": "{{url}}",
+							"host": [
+								"{{url}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateSearchContext",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "mutation updateSearchContext ($id: ID!, $searchContext: SearchContextEditInput!, $repositories: [SearchContextRepositoryRevisionsInput!]!) {\n    updateSearchContext (id: $id, searchContext: $searchContext, repositories: $repositories) {\n        id\n        name\n        namespace {\n            id\n            namespaceName\n            url\n        }\n        description\n        spec\n        autoDefined\n        repositories {\n            revisions\n        }\n        public\n        updatedAt\n        viewerCanManage\n    }\n}",
+								"variables": "{\n  \"id\": 0,\n  \"searchContext\": {\n    \"name\": \"\",\n    \"description\": \"\",\n    \"public\": true\n  },\n  \"repositories\": {\n    \"repositoryID\": 0,\n    \"revisions\": [\n      \"\"\n    ]\n  }\n}"
+							}
+						},
+						"url": {
+							"raw": "{{url}}",
+							"host": [
+								"{{url}}"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "queries",
+			"item": [
+				{
+					"name": "node",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "query node ($id: ID!) {\n    node (id: $id) {\n        id\n    }\n}",
+								"variables": "{\n  \"id\": 0\n}"
+							}
+						},
+						"url": {
+							"raw": "{{url}}",
+							"host": [
+								"{{url}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "repository",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "query repository ($rev: String!, $inputRevspec: String, $first: Int, $first1: Int, $query: String, $type: GitRefType, $orderBy: GitRefOrder, $interactive: Boolean, $first2: Int, $query1: String, $orderBy1: GitRefOrder, $interactive1: Boolean, $first3: Int, $query2: String, $revisionRange: String, $after: String, $path: String, $first4: Int, $first5: Int, $after1: String, $state: BatchChangeState, $viewerCanAdminister: Boolean, $query3: String, $state1: LSIFUploadState, $isLatestForRepo: Boolean, $dependencyOf: ID, $dependentOf: ID, $first6: Int, $after2: String, $query4: String, $state2: LSIFIndexState, $first7: Int, $after3: String, $type1: GitObjectType!, $pattern: String!, $permission: RepositoryPermission, $first8: Int!, $after4: String, $name: String, $cloneURL: String, $uri: String) {\n    repository (name: $name, cloneURL: $cloneURL, uri: $uri) {\n        id\n        name\n        description\n        language\n        createdAt\n        updatedAt\n        commit (rev: $rev, inputRevspec: $inputRevspec) {\n            id\n            oid\n            abbreviatedOID\n            message\n            subject\n            body\n            url\n            canonicalURL\n            fileNames\n            languages\n        }\n        mirrorInfo {\n            remoteURL\n            cloneInProgress\n            cloneProgress\n            cloned\n            updatedAt\n        }\n        externalRepository {\n            id\n            serviceType\n            serviceID\n        }\n        isFork\n        isArchived\n        isPrivate\n        externalServices (first: $first) {\n            totalCount\n        }\n        url\n        externalURLs {\n            url\n            serviceKind\n        }\n        defaultBranch {\n            id\n            name\n            abbrevName\n            displayName\n            prefix\n            type\n            url\n        }\n        gitRefs (first: $first1, query: $query, type: $type, orderBy: $orderBy, interactive: $interactive) {\n            totalCount\n        }\n        branches (first: $first2, query: $query1, orderBy: $orderBy1, interactive: $interactive1) {\n            totalCount\n        }\n        tags (first: $first3, query: $query2) {\n            totalCount\n        }\n        contributors (revisionRange: $revisionRange, after: $after, path: $path, first: $first4) {\n            totalCount\n        }\n        viewerCanAdminister\n        label {\n            text\n            html\n        }\n        detail {\n            text\n            html\n        }\n        matches {\n            url\n        }\n        codeIntelligenceCommitGraph {\n            stale\n            updatedAt\n        }\n        stars\n        changesetsStats {\n            unpublished\n            draft\n            open\n            merged\n            closed\n            total\n        }\n        batchChanges (first: $first5, after: $after1, state: $state, viewerCanAdminister: $viewerCanAdminister) {\n            totalCount\n        }\n        batchChangesDiffStat {\n            added\n            changed\n            deleted\n        }\n        indexConfiguration {\n            configuration\n            inferredConfiguration\n        }\n        lsifUploads (query: $query3, state: $state1, isLatestForRepo: $isLatestForRepo, dependencyOf: $dependencyOf, dependentOf: $dependentOf, first: $first6, after: $after2) {\n            totalCount\n        }\n        lsifIndexes (query: $query4, state: $state2, first: $first7, after: $after3) {\n            totalCount\n        }\n        previewGitObjectFilter (type: $type1, pattern: $pattern) {\n            name\n            rev\n        }\n        authorizedUsers (permission: $permission, first: $first8, after: $after4) {\n            totalCount\n        }\n        permissionsInfo {\n            permissions\n            syncedAt\n            updatedAt\n        }\n    }\n}",
+								"variables": "{\n  \"rev\": \"\",\n  \"inputRevspec\": \"\",\n  \"first\": 0,\n  \"first1\": 0,\n  \"query\": \"\",\n  \"type\": \"\",\n  \"orderBy\": \"\",\n  \"interactive\": true,\n  \"first2\": 0,\n  \"query1\": \"\",\n  \"orderBy1\": \"\",\n  \"interactive1\": true,\n  \"first3\": 0,\n  \"query2\": \"\",\n  \"revisionRange\": \"\",\n  \"after\": \"\",\n  \"path\": \"\",\n  \"first4\": 0,\n  \"first5\": 0,\n  \"after1\": \"\",\n  \"state\": \"\",\n  \"viewerCanAdminister\": true,\n  \"query3\": \"\",\n  \"state1\": \"\",\n  \"isLatestForRepo\": true,\n  \"dependencyOf\": 0,\n  \"dependentOf\": 0,\n  \"first6\": 0,\n  \"after2\": \"\",\n  \"query4\": \"\",\n  \"state2\": \"\",\n  \"first7\": 0,\n  \"after3\": \"\",\n  \"type1\": \"\",\n  \"pattern\": \"\",\n  \"permission\": \"\",\n  \"first8\": 0,\n  \"after4\": \"\",\n  \"name\": \"\",\n  \"cloneURL\": \"\",\n  \"uri\": \"\"\n}"
+							}
+						},
+						"url": {
+							"raw": "{{url}}",
+							"host": [
+								"{{url}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "repositoryRedirect",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "query repositoryRedirect ($name: String, $cloneURL: String) {\n    repositoryRedirect (name: $name, cloneURL: $cloneURL) {\n        ... on Repository {\n            id\n            name\n            uri\n            description\n            language\n            createdAt\n            updatedAt\n            isFork\n            isArchived\n            isPrivate\n            cloneInProgress\n            url\n            viewerCanAdminister\n            stars\n        }\n        ... on Redirect {\n            url\n        }\n    }\n}",
+								"variables": "{\n  \"name\": \"\",\n  \"cloneURL\": \"\"\n}"
+							}
+						},
+						"url": {
+							"raw": "{{url}}",
+							"host": [
+								"{{url}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "externalServices",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "query externalServices ($namespace: ID, $first: Int, $after: String) {\n    externalServices (namespace: $namespace, first: $first, after: $after) {\n        nodes {\n            id\n            kind\n            displayName\n            config\n            createdAt\n            updatedAt\n            repoCount\n            webhookURL\n            warning\n            lastSyncError\n            lastSyncAt\n            nextSyncAt\n            grantedScopes\n        }\n        totalCount\n        pageInfo {\n            endCursor\n            hasNextPage\n        }\n    }\n}",
+								"variables": "{\n  \"namespace\": 0,\n  \"first\": 0,\n  \"after\": \"\"\n}"
+							}
+						},
+						"url": {
+							"raw": "{{url}}",
+							"host": [
+								"{{url}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "repositories",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "query repositories ($precise: Boolean, $first: Int, $query: String, $after: String, $names: [String!], $cloned: Boolean, $notCloned: Boolean, $indexed: Boolean, $notIndexed: Boolean, $failedFetch: Boolean, $orderBy: RepositoryOrderBy, $descending: Boolean) {\n    repositories (first: $first, query: $query, after: $after, names: $names, cloned: $cloned, notCloned: $notCloned, indexed: $indexed, notIndexed: $notIndexed, failedFetch: $failedFetch, orderBy: $orderBy, descending: $descending) {\n        nodes {\n            id\n            name\n            description\n            language\n            createdAt\n            updatedAt\n            isFork\n            isArchived\n            isPrivate\n            url\n            viewerCanAdminister\n            stars\n        }\n        totalCount (precise: $precise)\n        pageInfo {\n            endCursor\n            hasNextPage\n        }\n    }\n}",
+								"variables": "{\n  \"precise\": true,\n  \"first\": 0,\n  \"query\": \"\",\n  \"after\": \"\",\n  \"names\": [\n    \"\"\n  ],\n  \"cloned\": true,\n  \"notCloned\": true,\n  \"indexed\": true,\n  \"notIndexed\": true,\n  \"failedFetch\": true,\n  \"orderBy\": \"\",\n  \"descending\": true\n}"
+							}
+						},
+						"url": {
+							"raw": "{{url}}",
+							"host": [
+								"{{url}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "phabricatorRepo",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "query phabricatorRepo ($name: String, $uri: String) {\n    phabricatorRepo (name: $name, uri: $uri) {\n        name\n        callsign\n        url\n    }\n}",
+								"variables": "{\n  \"name\": \"\",\n  \"uri\": \"\"\n}"
+							}
+						},
+						"url": {
+							"raw": "{{url}}",
+							"host": [
+								"{{url}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "currentUser",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "query currentUser ($first: Int, $eventName: String, $first1: Int, $first2: Int, $precise: Boolean, $first3: Int, $query: String, $after: String, $cloned: Boolean, $notCloned: Boolean, $indexed: Boolean, $notIndexed: Boolean, $externalServiceID: ID, $first4: Int, $after1: String, $state: BatchChangeState, $viewerCanAdminister: Boolean, $first5: Int, $after2: String, $first6: Int, $after3: String) {\n    currentUser {\n        id\n        username\n        displayName\n        avatarURL\n        url\n        settingsURL\n        createdAt\n        updatedAt\n        siteAdmin\n        builtinAuth\n        latestSettings {\n            id\n            createdAt\n            contents\n        }\n        settingsCascade {\n            final\n        }\n        organizations {\n            totalCount\n        }\n        organizationMemberships {\n            totalCount\n        }\n        tags\n        usageStatistics {\n            searchQueries\n            pageViews\n            codeIntelligenceActions\n            findReferencesActions\n            lastActiveTime\n            lastActiveCodeHostIntegrationTime\n        }\n        eventLogs (first: $first, eventName: $eventName) {\n            totalCount\n        }\n        emails {\n            email\n            isPrimary\n            verified\n            verificationPending\n            viewerCanManuallyVerify\n        }\n        accessTokens (first: $first1) {\n            totalCount\n        }\n        externalAccounts (first: $first2) {\n            totalCount\n        }\n        session {\n            canSignOut\n        }\n        viewerCanAdminister\n        viewerCanChangeUsername\n        surveyResponses {\n            id\n            email\n            score\n            reason\n            better\n            createdAt\n        }\n        databaseID\n        namespaceName\n        repositories (first: $first3, query: $query, after: $after, cloned: $cloned, notCloned: $notCloned, indexed: $indexed, notIndexed: $notIndexed, externalServiceID: $externalServiceID) {\n            totalCount (precise: $precise)\n        }\n        publicRepositories {\n            id\n            name\n            description\n            language\n            createdAt\n            updatedAt\n            isFork\n            isArchived\n            isPrivate\n            url\n            viewerCanAdminister\n            stars\n        }\n        batchChanges (first: $first4, after: $after1, state: $state, viewerCanAdminister: $viewerCanAdminister) {\n            totalCount\n        }\n        batchChangesCodeHosts (first: $first5, after: $after2) {\n            totalCount\n        }\n        permissionsInfo {\n            permissions\n            syncedAt\n            updatedAt\n        }\n        monitors (first: $first6, after: $after3) {\n            totalCount\n        }\n        urlForSiteAdminBilling\n    }\n}",
+								"variables": "{\n  \"first\": 0,\n  \"eventName\": \"\",\n  \"first1\": 0,\n  \"first2\": 0,\n  \"precise\": true,\n  \"first3\": 0,\n  \"query\": \"\",\n  \"after\": \"\",\n  \"cloned\": true,\n  \"notCloned\": true,\n  \"indexed\": true,\n  \"notIndexed\": true,\n  \"externalServiceID\": 0,\n  \"first4\": 0,\n  \"after1\": \"\",\n  \"state\": \"\",\n  \"viewerCanAdminister\": true,\n  \"first5\": 0,\n  \"after2\": \"\",\n  \"first6\": 0,\n  \"after3\": \"\"\n}"
+							}
+						},
+						"url": {
+							"raw": "{{url}}",
+							"host": [
+								"{{url}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "user",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "query user ($first: Int, $eventName: String, $first1: Int, $first2: Int, $precise: Boolean, $first3: Int, $query: String, $after: String, $cloned: Boolean, $notCloned: Boolean, $indexed: Boolean, $notIndexed: Boolean, $externalServiceID: ID, $first4: Int, $after1: String, $state: BatchChangeState, $viewerCanAdminister: Boolean, $first5: Int, $after2: String, $first6: Int, $after3: String, $username: String, $email: String) {\n    user (username: $username, email: $email) {\n        id\n        username\n        displayName\n        avatarURL\n        url\n        settingsURL\n        createdAt\n        updatedAt\n        siteAdmin\n        builtinAuth\n        latestSettings {\n            id\n            createdAt\n            contents\n        }\n        settingsCascade {\n            final\n        }\n        organizations {\n            totalCount\n        }\n        organizationMemberships {\n            totalCount\n        }\n        tags\n        usageStatistics {\n            searchQueries\n            pageViews\n            codeIntelligenceActions\n            findReferencesActions\n            lastActiveTime\n            lastActiveCodeHostIntegrationTime\n        }\n        eventLogs (first: $first, eventName: $eventName) {\n            totalCount\n        }\n        emails {\n            email\n            isPrimary\n            verified\n            verificationPending\n            viewerCanManuallyVerify\n        }\n        accessTokens (first: $first1) {\n            totalCount\n        }\n        externalAccounts (first: $first2) {\n            totalCount\n        }\n        session {\n            canSignOut\n        }\n        viewerCanAdminister\n        viewerCanChangeUsername\n        surveyResponses {\n            id\n            email\n            score\n            reason\n            better\n            createdAt\n        }\n        databaseID\n        namespaceName\n        repositories (first: $first3, query: $query, after: $after, cloned: $cloned, notCloned: $notCloned, indexed: $indexed, notIndexed: $notIndexed, externalServiceID: $externalServiceID) {\n            totalCount (precise: $precise)\n        }\n        publicRepositories {\n            id\n            name\n            description\n            language\n            createdAt\n            updatedAt\n            isFork\n            isArchived\n            isPrivate\n            url\n            viewerCanAdminister\n            stars\n        }\n        batchChanges (first: $first4, after: $after1, state: $state, viewerCanAdminister: $viewerCanAdminister) {\n            totalCount\n        }\n        batchChangesCodeHosts (first: $first5, after: $after2) {\n            totalCount\n        }\n        permissionsInfo {\n            permissions\n            syncedAt\n            updatedAt\n        }\n        monitors (first: $first6, after: $after3) {\n            totalCount\n        }\n        urlForSiteAdminBilling\n    }\n}",
+								"variables": "{\n  \"first\": 0,\n  \"eventName\": \"\",\n  \"first1\": 0,\n  \"first2\": 0,\n  \"precise\": true,\n  \"first3\": 0,\n  \"query\": \"\",\n  \"after\": \"\",\n  \"cloned\": true,\n  \"notCloned\": true,\n  \"indexed\": true,\n  \"notIndexed\": true,\n  \"externalServiceID\": 0,\n  \"first4\": 0,\n  \"after1\": \"\",\n  \"state\": \"\",\n  \"viewerCanAdminister\": true,\n  \"first5\": 0,\n  \"after2\": \"\",\n  \"first6\": 0,\n  \"after3\": \"\",\n  \"username\": \"\",\n  \"email\": \"\"\n}"
+							}
+						},
+						"url": {
+							"raw": "{{url}}",
+							"host": [
+								"{{url}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "users",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "query users ($first: Int, $query: String, $tag: String, $activePeriod: UserActivePeriod) {\n    users (first: $first, query: $query, tag: $tag, activePeriod: $activePeriod) {\n        nodes {\n            id\n            username\n            displayName\n            avatarURL\n            url\n            settingsURL\n            createdAt\n            updatedAt\n            siteAdmin\n            builtinAuth\n            tags\n            viewerCanAdminister\n            viewerCanChangeUsername\n            databaseID\n            namespaceName\n            urlForSiteAdminBilling\n        }\n        totalCount\n        pageInfo {\n            endCursor\n            hasNextPage\n        }\n    }\n}",
+								"variables": "{\n  \"first\": 0,\n  \"query\": \"\",\n  \"tag\": \"\",\n  \"activePeriod\": \"\"\n}"
+							}
+						},
+						"url": {
+							"raw": "{{url}}",
+							"host": [
+								"{{url}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "organization",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "query organization ($first: Int, $after: String, $state: BatchChangeState, $viewerCanAdminister: Boolean, $name: String!) {\n    organization (name: $name) {\n        id\n        name\n        displayName\n        createdAt\n        members {\n            totalCount\n        }\n        latestSettings {\n            id\n            createdAt\n            contents\n        }\n        settingsCascade {\n            final\n        }\n        viewerPendingInvitation {\n            id\n            createdAt\n            notifiedAt\n            respondedAt\n            responseType\n            respondURL\n            revokedAt\n        }\n        viewerCanAdminister\n        viewerIsMember\n        url\n        settingsURL\n        namespaceName\n        batchChanges (first: $first, after: $after, state: $state, viewerCanAdminister: $viewerCanAdminister) {\n            totalCount\n        }\n    }\n}",
+								"variables": "{\n  \"first\": 0,\n  \"after\": \"\",\n  \"state\": \"\",\n  \"viewerCanAdminister\": true,\n  \"name\": \"\"\n}"
+							}
+						},
+						"url": {
+							"raw": "{{url}}",
+							"host": [
+								"{{url}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "organizations",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "query organizations ($first: Int, $query: String) {\n    organizations (first: $first, query: $query) {\n        nodes {\n            id\n            name\n            displayName\n            createdAt\n            viewerCanAdminister\n            viewerIsMember\n            url\n            settingsURL\n            namespaceName\n        }\n        totalCount\n    }\n}",
+								"variables": "{\n  \"first\": 0,\n  \"query\": \"\"\n}"
+							}
+						},
+						"url": {
+							"raw": "{{url}}",
+							"host": [
+								"{{url}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "renderMarkdown",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "query renderMarkdown ($markdown: String!, $options: MarkdownOptions) {\n    renderMarkdown (markdown: $markdown, options: $options)\n}",
+								"variables": "{\n  \"markdown\": \"\",\n  \"options\": {\n    \"alwaysNil\": \"\"\n  }\n}"
+							}
+						},
+						"url": {
+							"raw": "{{url}}",
+							"host": [
+								"{{url}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "highlightCode",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "query highlightCode ($code: String!, $fuzzyLanguage: String!, $disableTimeout: Boolean!, $isLightTheme: Boolean) {\n    highlightCode (code: $code, fuzzyLanguage: $fuzzyLanguage, disableTimeout: $disableTimeout, isLightTheme: $isLightTheme)\n}",
+								"variables": "{\n  \"code\": \"\",\n  \"fuzzyLanguage\": \"\",\n  \"disableTimeout\": true,\n  \"isLightTheme\": true\n}"
+							}
+						},
+						"url": {
+							"raw": "{{url}}",
+							"host": [
+								"{{url}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "settingsSubject",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "query settingsSubject ($id: ID!) {\n    settingsSubject (id: $id) {\n        id\n        latestSettings {\n            id\n            createdAt\n            contents\n        }\n        settingsURL\n        viewerCanAdminister\n        settingsCascade {\n            final\n        }\n    }\n}",
+								"variables": "{\n  \"id\": 0\n}"
+							}
+						},
+						"url": {
+							"raw": "{{url}}",
+							"host": [
+								"{{url}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "viewerSettings",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "query viewerSettings {\n    viewerSettings {\n        subjects {\n            id\n            settingsURL\n            viewerCanAdminister\n        }\n        final\n    }\n}",
+								"variables": "{}"
+							}
+						},
+						"url": {
+							"raw": "{{url}}",
+							"host": [
+								"{{url}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "clientConfiguration",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "query clientConfiguration {\n    clientConfiguration {\n        contentScriptUrls\n        parentSourcegraph {\n            url\n        }\n    }\n}",
+								"variables": "{}"
+							}
+						},
+						"url": {
+							"raw": "{{url}}",
+							"host": [
+								"{{url}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "searchFilterSuggestions",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "query searchFilterSuggestions {\n    searchFilterSuggestions {\n        repogroup\n        repo\n    }\n}",
+								"variables": "{}"
+							}
+						},
+						"url": {
+							"raw": "{{url}}",
+							"host": [
+								"{{url}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "search",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "query search ($first: Int, $version: SearchVersion, $patternType: SearchPatternType, $query: String, $versionContext: String) {\n    search (version: $version, patternType: $patternType, query: $query, versionContext: $versionContext) {\n        results {\n            results {\n                ... on FileMatch {\n                    revSpec {\n                        ... on GitRef {\n                            id\n                            name\n                            abbrevName\n                            displayName\n                            prefix\n                            type\n                            url\n                        }\n                        ... on GitRevSpecExpr {\n                            expr\n                        }\n                        ... on GitObject {\n                            oid\n                            abbreviatedOID\n                            type\n                        }\n                    }\n                    limitHit\n                }\n                ... on CommitSearchResult {\n                    url\n                }\n                ... on Repository {\n                    id\n                    name\n                    uri\n                    description\n                    language\n                    createdAt\n                    updatedAt\n                    isFork\n                    isArchived\n                    isPrivate\n                    cloneInProgress\n                    url\n                    viewerCanAdminister\n                    stars\n                }\n            }\n            matchCount\n            approximateResultCount\n            limitHit\n            sparkline\n            repositoriesCount\n            indexUnavailable\n            elapsedMilliseconds\n        }\n        suggestions (first: $first) {\n            ... on Repository {\n                id\n                name\n                uri\n                description\n                language\n                createdAt\n                updatedAt\n                isFork\n                isArchived\n                isPrivate\n                cloneInProgress\n                url\n                viewerCanAdminister\n                stars\n            }\n            ... on File {\n                path\n                name\n                isDirectory\n                url\n            }\n            ... on Symbol {\n                name\n                containerName\n                kind\n                language\n                url\n                canonicalURL\n                fileLocal\n            }\n            ... on Language {\n                name\n            }\n            ... on SearchContext {\n                id\n                name\n                description\n                spec\n                autoDefined\n                public\n                updatedAt\n                viewerCanManage\n            }\n        }\n        stats {\n            approximateResultCount\n            sparkline\n        }\n    }\n}",
+								"variables": "{\n  \"first\": 0,\n  \"version\": \"\",\n  \"patternType\": \"\",\n  \"query\": \"\",\n  \"versionContext\": \"\"\n}"
+							}
+						},
+						"url": {
+							"raw": "{{url}}",
+							"host": [
+								"{{url}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "savedSearches",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "query savedSearches {\n    savedSearches {\n        id\n        description\n        query\n        notify\n        notifySlack\n        namespace {\n            id\n            namespaceName\n            url\n        }\n        slackWebhookURL\n    }\n}",
+								"variables": "{}"
+							}
+						},
+						"url": {
+							"raw": "{{url}}",
+							"host": [
+								"{{url}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "repoGroups",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "query repoGroups {\n    repoGroups {\n        name\n        repositories\n    }\n}",
+								"variables": "{}"
+							}
+						},
+						"url": {
+							"raw": "{{url}}",
+							"host": [
+								"{{url}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "versionContexts",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "query versionContexts {\n    versionContexts {\n        name\n        description\n    }\n}",
+								"variables": "{}"
+							}
+						},
+						"url": {
+							"raw": "{{url}}",
+							"host": [
+								"{{url}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "parseSearchQuery",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "query parseSearchQuery ($query: String, $patternType: SearchPatternType) {\n    parseSearchQuery (query: $query, patternType: $patternType)\n}",
+								"variables": "{\n  \"query\": \"\",\n  \"patternType\": \"\"\n}"
+							}
+						},
+						"url": {
+							"raw": "{{url}}",
+							"host": [
+								"{{url}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "site",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "query site ($first: Int, $first1: Int, $user: ID, $serviceType: String, $serviceID: String, $clientID: String) {\n    site {\n        id\n        siteID\n        configuration {\n            id\n            effectiveContents\n            validationMessages\n        }\n        latestSettings {\n            id\n            createdAt\n            contents\n        }\n        settingsCascade {\n            final\n        }\n        settingsURL\n        canReloadSite\n        viewerCanAdminister\n        accessTokens (first: $first) {\n            totalCount\n        }\n        authProviders {\n            totalCount\n        }\n        externalAccounts (first: $first1, user: $user, serviceType: $serviceType, serviceID: $serviceID, clientID: $clientID) {\n            totalCount\n        }\n        buildVersion\n        productVersion\n        updateCheck {\n            pending\n            checkedAt\n            errorMessage\n            updateVersionAvailable\n        }\n        needsRepositoryConfiguration\n        freeUsersExceeded\n        alerts {\n            type\n            message\n            isDismissibleWithKey\n        }\n        hasCodeIntelligence\n        disableBuiltInSearches\n        sendsEmailVerificationEmails\n        productSubscription {\n            productNameWithBrand\n            actualUserCount\n            actualUserCountDate\n            maximumAllowedUserCount\n            noLicenseWarningUserCount\n        }\n        allowSiteSettingsEdits\n    }\n}",
+								"variables": "{\n  \"first\": 0,\n  \"first1\": 0,\n  \"user\": 0,\n  \"serviceType\": \"\",\n  \"serviceID\": \"\",\n  \"clientID\": \"\"\n}"
+							}
+						},
+						"url": {
+							"raw": "{{url}}",
+							"host": [
+								"{{url}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "surveyResponses",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "query surveyResponses ($first: Int) {\n    surveyResponses (first: $first) {\n        nodes {\n            id\n            email\n            score\n            reason\n            better\n            createdAt\n        }\n        totalCount\n        last30DaysCount\n        averageScore\n        netPromoterScore\n    }\n}",
+								"variables": "{\n  \"first\": 0\n}"
+							}
+						},
+						"url": {
+							"raw": "{{url}}",
+							"host": [
+								"{{url}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "extensionRegistry",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "query extensionRegistry ($extensionID: String!, $first: Int, $publisher: ID, $query: String, $local: Boolean, $remote: Boolean, $extensionIDs: [String!], $prioritizeExtensionIDs: [String!], $first1: Int) {\n    extensionRegistry {\n        extension (extensionID: $extensionID) {\n            id\n            uuid\n            publisher {\n                ... on User {\n                    id\n                    username\n                    email\n                    displayName\n                    avatarURL\n                    url\n                    settingsURL\n                    createdAt\n                    updatedAt\n                    siteAdmin\n                    builtinAuth\n                    tags\n                    viewerCanAdminister\n                    viewerCanChangeUsername\n                    databaseID\n                    namespaceName\n                    urlForSiteAdminBilling\n                }\n                ... on Org {\n                    id\n                    name\n                    displayName\n                    createdAt\n                    viewerCanAdminister\n                    viewerIsMember\n                    url\n                    settingsURL\n                    namespaceName\n                }\n            }\n            extensionID\n            extensionIDWithoutRegistry\n            name\n            createdAt\n            updatedAt\n            publishedAt\n            url\n            remoteURL\n            registryName\n            isLocal\n            isWorkInProgress\n            viewerCanAdminister\n        }\n        extensions (first: $first, publisher: $publisher, query: $query, local: $local, remote: $remote, extensionIDs: $extensionIDs, prioritizeExtensionIDs: $prioritizeExtensionIDs) {\n            totalCount\n            url\n            error\n        }\n        publishers (first: $first1) {\n            nodes {\n                ... on User {\n                    id\n                    username\n                    email\n                    displayName\n                    avatarURL\n                    url\n                    settingsURL\n                    createdAt\n                    updatedAt\n                    siteAdmin\n                    builtinAuth\n                    tags\n                    viewerCanAdminister\n                    viewerCanChangeUsername\n                    databaseID\n                    namespaceName\n                    urlForSiteAdminBilling\n                }\n                ... on Org {\n                    id\n                    name\n                    displayName\n                    createdAt\n                    viewerCanAdminister\n                    viewerIsMember\n                    url\n                    settingsURL\n                    namespaceName\n                }\n            }\n            totalCount\n        }\n        viewerPublishers {\n            ... on User {\n                id\n                username\n                email\n                displayName\n                avatarURL\n                url\n                settingsURL\n                createdAt\n                updatedAt\n                siteAdmin\n                builtinAuth\n                tags\n                viewerCanAdminister\n                viewerCanChangeUsername\n                databaseID\n                namespaceName\n                urlForSiteAdminBilling\n            }\n            ... on Org {\n                id\n                name\n                displayName\n                createdAt\n                viewerCanAdminister\n                viewerIsMember\n                url\n                settingsURL\n                namespaceName\n            }\n        }\n        localExtensionIDPrefix\n        featuredExtensions {\n            error\n        }\n    }\n}",
+								"variables": "{\n  \"extensionID\": \"\",\n  \"first\": 0,\n  \"publisher\": 0,\n  \"query\": \"\",\n  \"local\": true,\n  \"remote\": true,\n  \"extensionIDs\": [\n    \"\"\n  ],\n  \"prioritizeExtensionIDs\": [\n    \"\"\n  ],\n  \"first1\": 0\n}"
+							}
+						},
+						"url": {
+							"raw": "{{url}}",
+							"host": [
+								"{{url}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "statusMessages",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "query statusMessages {\n    statusMessages {\n        ... on CloningProgress {\n            message\n        }\n        ... on IndexingProgress {\n            message\n        }\n        ... on ExternalServiceSyncError {\n            message\n        }\n        ... on SyncError {\n            message\n        }\n        ... on IndexingError {\n            message\n        }\n    }\n}",
+								"variables": "{}"
+							}
+						},
+						"url": {
+							"raw": "{{url}}",
+							"host": [
+								"{{url}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "repositoryStats",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "query repositoryStats {\n    repositoryStats {\n        gitDirBytes\n        indexedLinesCount\n    }\n}",
+								"variables": "{}"
+							}
+						},
+						"url": {
+							"raw": "{{url}}",
+							"host": [
+								"{{url}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "namespace",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "query namespace ($id: ID!) {\n    namespace (id: $id) {\n        id\n        namespaceName\n        url\n    }\n}",
+								"variables": "{\n  \"id\": 0\n}"
+							}
+						},
+						"url": {
+							"raw": "{{url}}",
+							"host": [
+								"{{url}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "namespaceByName",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "query namespaceByName ($name: String!) {\n    namespaceByName (name: $name) {\n        id\n        namespaceName\n        url\n    }\n}",
+								"variables": "{\n  \"name\": \"\"\n}"
+							}
+						},
+						"url": {
+							"raw": "{{url}}",
+							"host": [
+								"{{url}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "affiliatedRepositories",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "query affiliatedRepositories ($user: ID!, $codeHost: ID, $query: String) {\n    affiliatedRepositories (user: $user, codeHost: $codeHost, query: $query) {\n        nodes {\n            name\n            private\n        }\n    }\n}",
+								"variables": "{\n  \"user\": 0,\n  \"codeHost\": 0,\n  \"query\": \"\"\n}"
+							}
+						},
+						"url": {
+							"raw": "{{url}}",
+							"host": [
+								"{{url}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "codeHostSyncDue",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "query codeHostSyncDue ($ids: [ID!]!, $seconds: Int!) {\n    codeHostSyncDue (ids: $ids, seconds: $seconds)\n}",
+								"variables": "{\n  \"ids\": [\n    0\n  ],\n  \"seconds\": 0\n}"
+							}
+						},
+						"url": {
+							"raw": "{{url}}",
+							"host": [
+								"{{url}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "outOfBandMigrations",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "query outOfBandMigrations {\n    outOfBandMigrations {\n        id\n        team\n        component\n        description\n        introduced\n        deprecated\n        progress\n        created\n        lastUpdated\n        nonDestructive\n        applyReverse\n        errors {\n            message\n            created\n        }\n    }\n}",
+								"variables": "{}"
+							}
+						},
+						"url": {
+							"raw": "{{url}}",
+							"host": [
+								"{{url}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "featureFlags",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "query featureFlags {\n    featureFlags {\n        ... on FeatureFlagBoolean {\n            name\n            value\n        }\n        ... on FeatureFlagRollout {\n            name\n            rolloutBasisPoints\n        }\n    }\n}",
+								"variables": "{}"
+							}
+						},
+						"url": {
+							"raw": "{{url}}",
+							"host": [
+								"{{url}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "viewerFeatureFlags",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "query viewerFeatureFlags {\n    viewerFeatureFlags {\n        name\n        value\n    }\n}",
+								"variables": "{}"
+							}
+						},
+						"url": {
+							"raw": "{{url}}",
+							"host": [
+								"{{url}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "temporarySettings",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "query temporarySettings {\n    temporarySettings {\n        contents\n    }\n}",
+								"variables": "{}"
+							}
+						},
+						"url": {
+							"raw": "{{url}}",
+							"host": [
+								"{{url}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "batchChanges",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "query batchChanges ($first: Int, $after: String, $state: BatchChangeState, $viewerCanAdminister: Boolean) {\n    batchChanges (first: $first, after: $after, state: $state, viewerCanAdminister: $viewerCanAdminister) {\n        nodes {\n            id\n            name\n            description\n            viewerCanAdminister\n            url\n            createdAt\n            updatedAt\n            lastAppliedAt\n            closedAt\n        }\n        totalCount\n        pageInfo {\n            endCursor\n            hasNextPage\n        }\n    }\n}",
+								"variables": "{\n  \"first\": 0,\n  \"after\": \"\",\n  \"state\": \"\",\n  \"viewerCanAdminister\": true\n}"
+							}
+						},
+						"url": {
+							"raw": "{{url}}",
+							"host": [
+								"{{url}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "batchChange",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "query batchChange ($first: Int, $after: String, $reconcilerState: [ChangesetReconcilerState!], $publicationState: ChangesetPublicationState, $externalState: ChangesetExternalState, $state: ChangesetState, $reviewState: ChangesetReviewState, $checkState: ChangesetCheckState, $onlyPublishedByThisBatchChange: Boolean, $search: String, $onlyArchived: Boolean, $repo: ID, $from: DateTime, $to: DateTime, $includeArchived: Boolean, $first1: Int, $after1: String, $createdAfter: DateTime, $first2: Int, $after2: String, $namespace: ID!, $name: String!) {\n    batchChange (namespace: $namespace, name: $name) {\n        id\n        namespace {\n            id\n            namespaceName\n            url\n        }\n        name\n        description\n        specCreator {\n            id\n            username\n            displayName\n            avatarURL\n            url\n            settingsURL\n            createdAt\n            updatedAt\n            siteAdmin\n            builtinAuth\n            tags\n            viewerCanAdminister\n            viewerCanChangeUsername\n            databaseID\n            namespaceName\n            urlForSiteAdminBilling\n        }\n        initialApplier {\n            id\n            username\n            displayName\n            avatarURL\n            url\n            settingsURL\n            createdAt\n            updatedAt\n            siteAdmin\n            builtinAuth\n            tags\n            viewerCanAdminister\n            viewerCanChangeUsername\n            databaseID\n            namespaceName\n            urlForSiteAdminBilling\n        }\n        lastApplier {\n            id\n            username\n            displayName\n            avatarURL\n            url\n            settingsURL\n            createdAt\n            updatedAt\n            siteAdmin\n            builtinAuth\n            tags\n            viewerCanAdminister\n            viewerCanChangeUsername\n            databaseID\n            namespaceName\n            urlForSiteAdminBilling\n        }\n        viewerCanAdminister\n        url\n        createdAt\n        updatedAt\n        lastAppliedAt\n        closedAt\n        changesetsStats {\n            unpublished\n            draft\n            open\n            merged\n            closed\n            deleted\n            retrying\n            failed\n            scheduled\n            processing\n            archived\n            total\n        }\n        changesets (first: $first, after: $after, reconcilerState: $reconcilerState, publicationState: $publicationState, externalState: $externalState, state: $state, reviewState: $reviewState, checkState: $checkState, onlyPublishedByThisBatchChange: $onlyPublishedByThisBatchChange, search: $search, onlyArchived: $onlyArchived, repo: $repo) {\n            totalCount\n        }\n        changesetCountsOverTime (from: $from, to: $to, includeArchived: $includeArchived) {\n            date\n            total\n            merged\n            closed\n            draft\n            open\n            openApproved\n            openChangesRequested\n            openPending\n        }\n        diffStat {\n            added\n            changed\n            deleted\n        }\n        currentSpec {\n            id\n            autoApplyEnabled\n            state\n            originalInput\n            parsedInput\n            createdAt\n            startedAt\n            finishedAt\n            expiresAt\n            applyURL\n            viewerCanAdminister\n            failureMessage\n        }\n        bulkOperations (first: $first1, after: $after1, createdAfter: $createdAfter) {\n            totalCount\n        }\n        batchSpecs (first: $first2, after: $after2) {\n            totalCount\n        }\n    }\n}",
+								"variables": "{\n  \"first\": 0,\n  \"after\": \"\",\n  \"reconcilerState\": [\n    \"\"\n  ],\n  \"publicationState\": \"\",\n  \"externalState\": \"\",\n  \"state\": \"\",\n  \"reviewState\": \"\",\n  \"checkState\": \"\",\n  \"onlyPublishedByThisBatchChange\": true,\n  \"search\": \"\",\n  \"onlyArchived\": true,\n  \"repo\": 0,\n  \"from\": \"\",\n  \"to\": \"\",\n  \"includeArchived\": true,\n  \"first1\": 0,\n  \"after1\": \"\",\n  \"createdAfter\": \"\",\n  \"first2\": 0,\n  \"after2\": \"\",\n  \"namespace\": 0,\n  \"name\": \"\"\n}"
+							}
+						},
+						"url": {
+							"raw": "{{url}}",
+							"host": [
+								"{{url}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "batchChangesCodeHosts",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "query batchChangesCodeHosts ($first: Int, $after: String) {\n    batchChangesCodeHosts (first: $first, after: $after) {\n        nodes {\n            externalServiceKind\n            externalServiceURL\n            requiresSSH\n        }\n        totalCount\n        pageInfo {\n            endCursor\n            hasNextPage\n        }\n    }\n}",
+								"variables": "{\n  \"first\": 0,\n  \"after\": \"\"\n}"
+							}
+						},
+						"url": {
+							"raw": "{{url}}",
+							"host": [
+								"{{url}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "batchSpecs",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "query batchSpecs ($first: Int, $after: String) {\n    batchSpecs (first: $first, after: $after) {\n        totalCount\n        pageInfo {\n            endCursor\n            hasNextPage\n        }\n        nodes {\n            id\n            autoApplyEnabled\n            state\n            originalInput\n            parsedInput\n            createdAt\n            startedAt\n            finishedAt\n            expiresAt\n            applyURL\n            viewerCanAdminister\n            failureMessage\n        }\n    }\n}",
+								"variables": "{\n  \"first\": 0,\n  \"after\": \"\"\n}"
+							}
+						},
+						"url": {
+							"raw": "{{url}}",
+							"host": [
+								"{{url}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "codeIntelligenceConfigurationPolicies",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "query codeIntelligenceConfigurationPolicies ($repository: ID) {\n    codeIntelligenceConfigurationPolicies (repository: $repository) {\n        id\n        name\n        type\n        pattern\n        protected\n        retentionEnabled\n        retentionDurationHours\n        retainIntermediateCommits\n        indexingEnabled\n        indexCommitMaxAgeHours\n        indexIntermediateCommits\n    }\n}",
+								"variables": "{\n  \"repository\": 0\n}"
+							}
+						},
+						"url": {
+							"raw": "{{url}}",
+							"host": [
+								"{{url}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "lsifUploads",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "query lsifUploads ($query: String, $state: LSIFUploadState, $dependencyOf: ID, $dependentOf: ID, $isLatestForRepo: Boolean, $first: Int, $after: String) {\n    lsifUploads (query: $query, state: $state, dependencyOf: $dependencyOf, dependentOf: $dependentOf, isLatestForRepo: $isLatestForRepo, first: $first, after: $after) {\n        nodes {\n            id\n            inputCommit\n            inputRoot\n            inputIndexer\n            state\n            uploadedAt\n            startedAt\n            finishedAt\n            failure\n            isLatestForRepo\n            placeInQueue\n        }\n        totalCount\n        pageInfo {\n            endCursor\n            hasNextPage\n        }\n    }\n}",
+								"variables": "{\n  \"query\": \"\",\n  \"state\": \"\",\n  \"dependencyOf\": 0,\n  \"dependentOf\": 0,\n  \"isLatestForRepo\": true,\n  \"first\": 0,\n  \"after\": \"\"\n}"
+							}
+						},
+						"url": {
+							"raw": "{{url}}",
+							"host": [
+								"{{url}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "lsifIndexes",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "query lsifIndexes ($query: String, $state: LSIFIndexState, $first: Int, $after: String) {\n    lsifIndexes (query: $query, state: $state, first: $first, after: $after) {\n        nodes {\n            id\n            inputCommit\n            inputRoot\n            inputIndexer\n            state\n            queuedAt\n            startedAt\n            finishedAt\n            failure\n            placeInQueue\n        }\n        totalCount\n        pageInfo {\n            endCursor\n            hasNextPage\n        }\n    }\n}",
+								"variables": "{\n  \"query\": \"\",\n  \"state\": \"\",\n  \"first\": 0,\n  \"after\": \"\"\n}"
+							}
+						},
+						"url": {
+							"raw": "{{url}}",
+							"host": [
+								"{{url}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "insights",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "query insights ($ids: [ID!]) {\n    insights (ids: $ids) {\n        nodes {\n            title\n            description\n            id\n        }\n        totalCount\n        pageInfo {\n            endCursor\n            hasNextPage\n        }\n    }\n}",
+								"variables": "{\n  \"ids\": [\n    0\n  ]\n}"
+							}
+						},
+						"url": {
+							"raw": "{{url}}",
+							"host": [
+								"{{url}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "insightsDashboards",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "query insightsDashboards ($first: Int, $after: String) {\n    insightsDashboards (first: $first, after: $after) {\n        nodes {\n            id\n            title\n        }\n        pageInfo {\n            endCursor\n            hasNextPage\n        }\n    }\n}",
+								"variables": "{\n  \"first\": 0,\n  \"after\": \"\"\n}"
+							}
+						},
+						"url": {
+							"raw": "{{url}}",
+							"host": [
+								"{{url}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "authorizedUserRepositories",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "query authorizedUserRepositories ($precise: Boolean, $username: String, $email: String, $perm: RepositoryPermission, $first: Int!, $after: String) {\n    authorizedUserRepositories (username: $username, email: $email, perm: $perm, first: $first, after: $after) {\n        nodes {\n            id\n            name\n            description\n            language\n            createdAt\n            updatedAt\n            isFork\n            isArchived\n            isPrivate\n            url\n            viewerCanAdminister\n            stars\n        }\n        totalCount (precise: $precise)\n        pageInfo {\n            endCursor\n            hasNextPage\n        }\n    }\n}",
+								"variables": "{\n  \"precise\": true,\n  \"username\": \"\",\n  \"email\": \"\",\n  \"perm\": \"\",\n  \"first\": 0,\n  \"after\": \"\"\n}"
+							}
+						},
+						"url": {
+							"raw": "{{url}}",
+							"host": [
+								"{{url}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "usersWithPendingPermissions",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "query usersWithPendingPermissions {\n    usersWithPendingPermissions\n}",
+								"variables": "{}"
+							}
+						},
+						"url": {
+							"raw": "{{url}}",
+							"host": [
+								"{{url}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "enterpriseLicenseHasFeature",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "query enterpriseLicenseHasFeature ($feature: String!) {\n    enterpriseLicenseHasFeature (feature: $feature)\n}",
+								"variables": "{\n  \"feature\": \"\"\n}"
+							}
+						},
+						"url": {
+							"raw": "{{url}}",
+							"host": [
+								"{{url}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "dotcom",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "query dotcom ($uuid: String!, $first: Int, $account: ID, $query: String, $account1: ID, $subscriptionToUpdate: ID, $productSubscription: ProductSubscriptionInput!, $first1: Int, $licenseKeySubstring: String, $productSubscriptionID: ID) {\n    dotcom {\n        productSubscription (uuid: $uuid) {\n            id\n            uuid\n            name\n            createdAt\n            isArchived\n            url\n            urlForSiteAdmin\n            urlForSiteAdminBilling\n        }\n        productSubscriptions (first: $first, account: $account, query: $query) {\n            totalCount\n        }\n        previewProductSubscriptionInvoice (account: $account1, subscriptionToUpdate: $subscriptionToUpdate, productSubscription: $productSubscription) {\n            price\n            prorationDate\n            isDowngradeRequiringManualIntervention\n        }\n        productLicenses (first: $first1, licenseKeySubstring: $licenseKeySubstring, productSubscriptionID: $productSubscriptionID) {\n            totalCount\n        }\n        productPlans {\n            billingPlanID\n            productPlanID\n            name\n            nameWithBrand\n            pricePerUserPerYear\n            minQuantity\n            maxQuantity\n            tiersMode\n        }\n    }\n}",
+								"variables": "{\n  \"uuid\": \"\",\n  \"first\": 0,\n  \"account\": 0,\n  \"query\": \"\",\n  \"account1\": 0,\n  \"subscriptionToUpdate\": 0,\n  \"productSubscription\": {\n    \"billingPlanID\": \"\",\n    \"userCount\": 0\n  },\n  \"first1\": 0,\n  \"licenseKeySubstring\": \"\",\n  \"productSubscriptionID\": 0\n}"
+							}
+						},
+						"url": {
+							"raw": "{{url}}",
+							"host": [
+								"{{url}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "autoDefinedSearchContexts",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "query autoDefinedSearchContexts {\n    autoDefinedSearchContexts {\n        id\n        name\n        namespace {\n            id\n            namespaceName\n            url\n        }\n        description\n        spec\n        autoDefined\n        repositories {\n            revisions\n        }\n        public\n        updatedAt\n        viewerCanManage\n    }\n}",
+								"variables": "{}"
+							}
+						},
+						"url": {
+							"raw": "{{url}}",
+							"host": [
+								"{{url}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "searchContexts",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "query searchContexts ($first: Int, $after: String, $query: String, $namespaces: [ID], $orderBy: SearchContextsOrderBy, $descending: Boolean) {\n    searchContexts (first: $first, after: $after, query: $query, namespaces: $namespaces, orderBy: $orderBy, descending: $descending) {\n        nodes {\n            id\n            name\n            description\n            spec\n            autoDefined\n            public\n            updatedAt\n            viewerCanManage\n        }\n        totalCount\n        pageInfo {\n            endCursor\n            hasNextPage\n        }\n    }\n}",
+								"variables": "{\n  \"first\": 0,\n  \"after\": \"\",\n  \"query\": \"\",\n  \"namespaces\": [\n    0\n  ],\n  \"orderBy\": \"\",\n  \"descending\": true\n}"
+							}
+						},
+						"url": {
+							"raw": "{{url}}",
+							"host": [
+								"{{url}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "searchContextBySpec",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "query searchContextBySpec ($spec: String!) {\n    searchContextBySpec (spec: $spec) {\n        id\n        name\n        namespace {\n            id\n            namespaceName\n            url\n        }\n        description\n        spec\n        autoDefined\n        repositories {\n            revisions\n        }\n        public\n        updatedAt\n        viewerCanManage\n    }\n}",
+								"variables": "{\n  \"spec\": \"\"\n}"
+							}
+						},
+						"url": {
+							"raw": "{{url}}",
+							"host": [
+								"{{url}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "isSearchContextAvailable",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "query isSearchContextAvailable ($spec: String!) {\n    isSearchContextAvailable (spec: $spec)\n}",
+								"variables": "{\n  \"spec\": \"\"\n}"
+							}
+						},
+						"url": {
+							"raw": "{{url}}",
+							"host": [
+								"{{url}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "compute",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "query compute ($query: String) {\n    compute (query: $query) {\n        ... on ComputeMatchContext {\n            commit\n            path\n        }\n        ... on ComputeText {\n            commit\n            path\n            kind\n            value\n        }\n    }\n}",
+								"variables": "{\n  \"query\": \"\"\n}"
+							}
+						},
+						"url": {
+							"raw": "{{url}}",
+							"host": [
+								"{{url}}"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"variable": [
+		{
+			"key": "url",
+			"value": "",
+			"type": "any",
+			"description": "URL for the request."
+		}
+	]
+}
